@@ -34,7 +34,7 @@ namespace Ej4
             // 
             // btnRecibosImagen
             // 
-            this.btnRecibosImagen.Location = new System.Drawing.Point(53, 39);
+            this.btnRecibosImagen.Location = new System.Drawing.Point(46, 43);
             this.btnRecibosImagen.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecibosImagen.Name = "btnRecibosImagen";
             this.btnRecibosImagen.Size = new System.Drawing.Size(184, 61);
@@ -43,13 +43,13 @@ namespace Ej4
             this.btnRecibosImagen.UseVisualStyleBackColor = true;
             this.btnRecibosImagen.Click += new System.EventHandler(this.btnRecibosImagen_Click);
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 149);
             this.Controls.Add(this.btnRecibosImagen);
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "Form1";
             this.ResumeLayout(false);
 

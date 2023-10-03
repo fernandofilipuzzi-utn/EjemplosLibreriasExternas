@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="reportes\img\pato.jpg" />
+    <Content Include="reportes\recibos_logoBase64.html" />
     <Content Include="reportes\recibos_logo.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
