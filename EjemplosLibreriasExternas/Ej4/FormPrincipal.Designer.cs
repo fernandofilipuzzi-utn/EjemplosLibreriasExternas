@@ -34,21 +34,23 @@ namespace Ej4
             // 
             // btnRecibosImagen
             // 
-            this.btnRecibosImagen.Location = new System.Drawing.Point(46, 43);
-            this.btnRecibosImagen.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRecibosImagen.Location = new System.Drawing.Point(100, 52);
+            this.btnRecibosImagen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRecibosImagen.Name = "btnRecibosImagen";
-            this.btnRecibosImagen.Size = new System.Drawing.Size(184, 61);
+            this.btnRecibosImagen.Size = new System.Drawing.Size(228, 122);
             this.btnRecibosImagen.TabIndex = 27;
-            this.btnRecibosImagen.Text = "Imprimir recibos con imagen";
+            this.btnRecibosImagen.Text = "Generar pdf de recibos con imagen";
             this.btnRecibosImagen.UseVisualStyleBackColor = true;
             this.btnRecibosImagen.Click += new System.EventHandler(this.btnRecibosImagen_Click);
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 149);
+            this.ClientSize = new System.Drawing.Size(423, 229);
             this.Controls.Add(this.btnRecibosImagen);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
             this.Text = "Form1";
             this.ResumeLayout(false);
