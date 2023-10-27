@@ -49,58 +49,64 @@ namespace Ej1
             font.FontHeightInPoints = 10;
             #endregion
 
+            int nroFila = 0;
+
             #region cabecera
-            IRow headerRow = sheet.CreateRow(0);
+            IRow headerRow = sheet.CreateRow(nroFila);
 
-            headerRow.CreateCell(0);
-            headerRow.GetCell(0).SetCellValue("DNI");
-            headerRow.GetCell(0).CellStyle.SetFont(font);
+            int nroColumna = 0;
 
-            headerRow.CreateCell(1);
-            headerRow.GetCell(1).SetCellValue("NOMBRE");
-            headerRow.GetCell(1).CellStyle.SetFont(font);
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellValue("DNI");
+            headerRow.GetCell(nroColumna++).CellStyle.SetFont(font);
 
-            headerRow.CreateCell(2);
-            headerRow.GetCell(2).SetCellValue("FECHA NACIMIENTO");
-            headerRow.GetCell(2).CellStyle.SetFont(font);
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellValue("NOMBRE");
+            headerRow.GetCell(nroColumna++).CellStyle.SetFont(font);
 
-            headerRow.CreateCell(3);
-            headerRow.GetCell(3).SetCellValue("HORA NACIMIENTO");
-            headerRow.GetCell(3).CellStyle.SetFont(font);
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellValue("FECHA NACIMIENTO");
+            headerRow.GetCell(nroColumna++).CellStyle.SetFont(font);
+
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellValue("HORA NACIMIENTO");
+            headerRow.GetCell(nroColumna++).CellStyle.SetFont(font);
             #endregion
 
-            int n = 1;
+            
             foreach (Persona p in personas)
             {
-                var row= sheet.CreateRow(n++);
-
+                var row= sheet.CreateRow(++nroFila);
+                nroColumna = 0;
                 //
-                row.CreateCell(0);
-                row.GetCell(0).CellStyle = wb.CreateCellStyle();
-                row.GetCell(0).CellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("#.###.###");                    
-                row.GetCell(0).SetCellType(CellType.Numeric);
-                row.GetCell(0).CellStyle.SetFont(font);
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).CellStyle = wb.CreateCellStyle();
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).CellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("#");
+                row.GetCell(nroColumna).CellStyle.SetFont(font);
+                row.GetCell(nroColumna++).SetCellValue(p.Dni);
                 //
-                row.CreateCell(1);
-                row.GetCell(1).SetCellType(CellType.String);
-                row.GetCell(1).CellStyle.SetFont(font);
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.String);
+                row.GetCell(nroColumna).CellStyle.SetFont(font);
+                row.GetCell(nroColumna++).SetCellValue(p.Nombre);
                 //
-                row.CreateCell(2);
-                row.GetCell(2).CellStyle.DataFormat = wb.CreateDataFormat().GetFormat("d/m/y");                
-                row.GetCell(2).CellStyle.SetFont(font);
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).CellStyle = wb.CreateCellStyle();
+                row.GetCell(nroColumna).CellStyle.DataFormat=HSSFDataFormat.GetBuiltinFormat("dd/mm/yyyy");
+                row.GetCell(nroColumna).CellStyle.SetFont(font);
+                row.GetCell(nroColumna++).SetCellValue($"{p.Nacimiento:d/M/yyyy}");
                 //
-                row.CreateCell(3);
-                row.GetCell(3).SetCellType(CellType.String);
-                row.GetCell(3).CellStyle.SetFont(font);
-
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.String);
+                row.GetCell(nroColumna).CellStyle.SetFont(font);
+                row.GetCell(nroColumna++).SetCellValue($"{p.Nacimiento:HH:mm:ss}");
                 //
-                row.GetCell(0).SetCellValue(p.Dni);
-
-                row.GetCell(1).SetCellValue(p.Nombre);
-
-                row.GetCell(2).SetCellValue(p.Nacimiento);
-
-                row.GetCell(3).SetCellValue($"{p.Nacimiento:HH:mm:ss}");
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).CellStyle.SetFont(font);
+                row.GetCell(nroColumna).CellStyle.DataFormat = HSSFDataFormat.GetBuiltinFormat("#,#0.00");
+                row.GetCell(nroColumna++).SetCellValue(0.12);
             }
            
             byte[] bytes = new byte[0];
