@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{12E60787-E8EF-4037-9507-62BE9CF0ABFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ej3</RootNamespace>
-    <AssemblyName>Ej3</AssemblyName>
+    <RootNamespace>Ej3_iTextSharp</RootNamespace>
+    <AssemblyName>Ej3_iTextSharp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -157,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -168,14 +169,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="reportes\salida.pdf" />
+    <None Include="salida\recibos_logo.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="reportes\img\pato.jpg" />
-    <Content Include="reportes\recibos_logo.html" />
+    <Content Include="info.txt" />
+    <Content Include="plantillas\img\pato.jpg" />
+    <Content Include="plantillas\recibos_logo.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

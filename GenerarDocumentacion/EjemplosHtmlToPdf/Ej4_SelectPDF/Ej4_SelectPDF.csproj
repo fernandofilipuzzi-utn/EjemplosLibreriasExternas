@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Ej4</RootNamespace>
-    <AssemblyName>Ej4</AssemblyName>
+    <RootNamespace>Ej4_SelectPDF</RootNamespace>
+    <AssemblyName>Ej4_SelectPDF</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -79,15 +80,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="reportes\salida.pdf" />
+    <None Include="salida\recibos_logo.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="reportes\img\pato.jpg" />
-    <Content Include="reportes\recibos_logoBase64.html" />
-    <Content Include="reportes\recibos_logo.html" />
+    <Content Include="info.txt" />
+    <Content Include="plantillas\img\pato.jpg" />
+    <Content Include="plantillas\recibos_logoBase64.html" />
+    <Content Include="plantillas\recibos_logo.html" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

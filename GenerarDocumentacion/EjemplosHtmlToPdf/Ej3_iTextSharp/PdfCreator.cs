@@ -14,20 +14,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ej3
+namespace Ej3_iTextSharp
 {
     static class PdfCreator
     {
-        public static string ConvertHtmlToPdf(string htmlContent, string fileNameWithPath, 
-                                                string cssContent = "")
+        public static string ConvertHtmlToPdf(string htmlContent, string fileNameWithPath, string cssContent = "")
         {
-            /*
-            if (!Directory.Exists(filePath))
-            {
-                Directory.CreateDirectory(filePath);
-            }
-            var fileNameWithPath = Path.Combine(filePath, fileNameWithoutExtension + ".pdf");
-            */
             using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
             {
                 using (var document = new Document())

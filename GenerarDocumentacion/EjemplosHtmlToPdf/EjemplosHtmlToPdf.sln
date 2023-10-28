@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej1", "Ej1\Ej1.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej2", "Ej2\Ej2.csproj", "{6C8AA708-53CD-440E-854A-58CDCE2F36A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej3", "Ej3\Ej3.csproj", "{12E60787-E8EF-4037-9507-62BE9CF0ABFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej3_iTextSharp", "Ej3_iTextSharp\Ej3_iTextSharp.csproj", "{12E60787-E8EF-4037-9507-62BE9CF0ABFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej4_selectpdf", "Ej4\Ej4_selectpdf.csproj", "{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej4_SelectPDF", "Ej4_SelectPDF\Ej4_SelectPDF.csproj", "{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

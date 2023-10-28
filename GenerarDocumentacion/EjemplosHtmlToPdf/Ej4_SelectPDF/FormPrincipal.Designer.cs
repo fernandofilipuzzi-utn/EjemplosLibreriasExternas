@@ -1,5 +1,5 @@
 ﻿
-namespace Ej4
+namespace Ej4_SelectPDF
 {
     partial class FormPrincipal
     {
@@ -29,37 +29,52 @@ namespace Ej4
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRecibosImagen = new System.Windows.Forms.Button();
+            this.btnGenerarPDF = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // btnRecibosImagen
+            // btnGenerarPDF
             // 
-            this.btnRecibosImagen.Location = new System.Drawing.Point(100, 52);
-            this.btnRecibosImagen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnRecibosImagen.Name = "btnRecibosImagen";
-            this.btnRecibosImagen.Size = new System.Drawing.Size(228, 122);
-            this.btnRecibosImagen.TabIndex = 27;
-            this.btnRecibosImagen.Text = "Generar pdf de recibos con imagen";
-            this.btnRecibosImagen.UseVisualStyleBackColor = true;
-            this.btnRecibosImagen.Click += new System.EventHandler(this.btnRecibosImagen_Click);
+            this.btnGenerarPDF.Location = new System.Drawing.Point(282, 15);
+            this.btnGenerarPDF.Margin = new System.Windows.Forms.Padding(6);
+            this.btnGenerarPDF.Name = "btnGenerarPDF";
+            this.btnGenerarPDF.Size = new System.Drawing.Size(228, 66);
+            this.btnGenerarPDF.TabIndex = 27;
+            this.btnGenerarPDF.Text = "Generar PDF";
+            this.btnGenerarPDF.UseVisualStyleBackColor = true;
+            this.btnGenerarPDF.Click += new System.EventHandler(this.btnGenerarPDF_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 123);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(80, 20);
+            this.linkLabel1.TabIndex = 28;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 229);
-            this.Controls.Add(this.btnRecibosImagen);
+            this.ClientSize = new System.Drawing.Size(829, 170);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.btnGenerarPDF);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnRecibosImagen;
+        private System.Windows.Forms.Button btnGenerarPDF;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
