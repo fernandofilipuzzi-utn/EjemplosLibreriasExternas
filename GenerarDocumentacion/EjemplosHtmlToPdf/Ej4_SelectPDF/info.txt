@@ -1,5 +1,14 @@
 ﻿
 
+documentación:
+		https://selectpdf.com/docs/
+
+SelectPdf para .NET es una biblioteca de PDF profesional que se puede utilizar para crear, escribir, editar, manejar y leer archivos PDF sin dependencias externas dentro de las aplicaciones .NET. Con esta biblioteca de PDF .NET, puede implementar capacidades avanzadas para crear archivos PDF desde cero o procesar documentos PDF existentes completamente a través de C#/VB.NET sin instalar Adobe Acrobat.
+SelectPdf para .NET PDF API puede admitir muchas funciones avanzadas, como configuración de seguridad (incluidas firmas digitales), combinación/división de PDF, dibujo de texto, html e imágenes en pdf, llenado de campos de formulario PDF, carteras de PDF y muchas más. SelectPdf para .NET se puede utilizar para convertir fácilmente HTML a PDF con C#/VB.NET en alta calidad. SelectPdf también puede extraer texto de documentos PDF existentes o buscar texto en documentos PDF y puede convertir páginas PDF en imágenes rasterizadas (PNG, BMP, JPEG, TIFF).
+SelectPdf proporciona versiones para .NET Framework, .NET Core (2.0 y superior) y .NET 5 (hasta .NET Standard 2.0). SelectPdf funciona en la nube de Azure, incluidas Azure Web Apps (plan básico o superior) con algunas limitaciones. Más detalles aquí: Implementación en Microsoft Azure .
+Nota: SelectPdf actualmente solo funciona en sistemas Windows. No hay soporte para Linux, Xamarin u otras plataformas.
+La biblioteca SelectPdf para .NET se proporciona como un producto de prueba gratuito que se puede probar sin limitaciones durante 30 días.
+
 seguir viendo
 https://stackoverflow.com/questions/13515210/what-is-the-difference-between-lowagie-and-itext/13515403#13515403
 https://html2pdf.com/
