@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ej1.Models
+namespace Ej1_NPOI.Models
 {
     class Persona
     {
