@@ -234,7 +234,6 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormPrincipal.resx">
@@ -269,6 +268,12 @@
   <ItemGroup>
     <Content Include="docs\vista.png" />
     <Content Include="info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NPOI_excel_ClassLib\NPOI_excel_ClassLib.csproj">
+      <Project>{ae7d44e5-956c-4fc5-b04d-164e6e926ecc}</Project>
+      <Name>NPOI_excel_ClassLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
