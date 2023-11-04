@@ -1,7 +1,8 @@
 ﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using Ej1_NPOI.Models;
+using EPPlus_excel_ClassLib.Models;
+using OfficeOpenXml;
 using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FontSize = DocumentFormat.OpenXml.Spreadsheet.FontSize;
 
-namespace NPOI_excel_ClassLib
+namespace EPPlus_excel_ClassLib
 {
-    public class GenerarExcelMiniExcel
+    public class GenerarExcelEPlus
     {
-        public enum TipoFormato { XLS, XLSX}
+        public enum TipoFormato { XLS, XLSX }
 
         public string GetMimeType(TipoFormato formato)
         {
@@ -31,9 +33,55 @@ namespace NPOI_excel_ClassLib
             }
         }
 
-        public byte[] GenerarExcel1()
+        public byte[] Generar()
         {
-            public byte[] GenerarExcel1()
+            List<Ejemplo> ejemplos = Ejemplo.ListaDeEjemplos();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            byte[] bytes = new byte[0];
+            // Crear un nuevo paquete de trabajo de Excel
+            using (var package = new ExcelPackage())
+            {
+                // Agregar una nueva hoja de cálculo al paquete
+                var sheet = package.Workbook.Worksheets.Add("MiHojaDeCalculo");
+
+                int fila = 1;
+                foreach (Ejemplo ejemplo in ejemplos)
+                {
+                    sheet.SetValue($"A{fila}", ejemplo.Texto);
+                    sheet.Cells[$"B{fila}"].Value = ejemplo.Numero;
+                    sheet.Cells[$"C{fila}"].Value = DateTime.Parse($"{ejemplo.Fecha:dd/MM/yyyy}");
+                    sheet.Cells[$"D{fila}"].Value = new TimeSpan(ejemplo.Fecha.Hour, ejemplo.Fecha.Minute, ejemplo.Fecha.Second);
+                    sheet.Cells[$"E{fila}"].Value = ejemplo.Moneda;
+
+                    fila++;
+                }
+
+                sheet.Cells[$"A1:A{fila - 1}"].Style.Numberformat.Format = "@";
+                sheet.Cells[$"B1:B{fila - 1}"].Style.Numberformat.Format = "#,###";
+                sheet.Cells[$"C1:C{fila - 1}"].Style.Numberformat.Format = "d/m/yy";
+                sheet.Cells[$"D1:D{fila - 1}"].Style.Numberformat.Format = "[Red]h:mm:ss;@";
+                sheet.Cells[$"E1:E{fila - 1}"].Style.Numberformat.Format = "$* #,##0.00;@";
+
+                sheet.Cells[$"A1:E{fila - 1}"].Style.Font.Size = 10;
+                sheet.Cells[$"A1:E{fila - 1}"].Style.Font.Name = "Arial";
+                sheet.Cells[$"A1:E{fila - 1}"].Style.Font.Bold = true;
+
+                sheet.Cells.AutoFitColumns();
+
+                //_-[$$-es-AR]\" \"* #.##0,00_-
+                using (var ms = new MemoryStream())
+                {
+                    package.SaveAs(ms);
+                    bytes = ms.ToArray();
+                }
+
+                GC.Collect();
+            }
+
+            return bytes;
+        }
+        public byte[] GenerarExcel1()
         {
             SLDocument sl = new SLDocument();
 
@@ -159,7 +207,7 @@ namespace NPOI_excel_ClassLib
             );
 
             CellFormats cellFormats = new CellFormats(
-                new CellFormat() { NumberFormatId = 2, FontId = 0,FillId = 0, BorderId = 0 },
+                new CellFormat() { NumberFormatId = 2, FontId = 0, FillId = 0, BorderId = 0 },
                  new CellFormat() { NumberFormatId = 20, FontId = 0, FillId = 0, BorderId = 0 }
             );
             stylesheet.Append(fonts, fills, borders, cellFormats);

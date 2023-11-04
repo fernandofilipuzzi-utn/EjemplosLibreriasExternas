@@ -1,5 +1,4 @@
-﻿using Ej1_NPOI.Models;
-using NPOI.HSSF.UserModel;
+﻿using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.SS.Util;
 using NPOI.XSSF.UserModel;
@@ -15,12 +14,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using NPOI_excel_ClassLib;
+using EPPlus_excel_ClassLib;
 
-namespace Ej1_NPOI
+namespace Ej1_NPOI_Desktop
 {
     public partial class FormPrincipal : Form
     {
-
+        string pathExcel;
         public FormPrincipal()
         {
             InitializeComponent();
@@ -32,18 +33,27 @@ namespace Ej1_NPOI
 
         }
 
-        private void btnXLS_Click(object sender, EventArgs e)
+        private void btnNPOI_Click(object sender, EventArgs e)
         {
             try
             {
                 GenerarExcelNPOI generador = new GenerarExcelNPOI();
-                byte[] bytes = generador.GenerarExcel(GenerarExcelNPOI.TipoFormato.XLS);
-                string mimeType = generador.GetMimeType(GenerarExcelNPOI.TipoFormato.XLS);
+                byte[] bytes = new byte[0];
+                string mimeType = "";
+                if (comboBox1.SelectedIndex == 0)
+                {
 
-                string filePath = "../../Salida/mi_archivo.xls";
-                File.WriteAllBytes(filePath, bytes);
-
-                linkLabel1.Text = Path.GetFullPath(filePath);
+                    bytes = generador.GenerarExcel(GenerarExcelNPOI.TipoFormato.XLS);
+                    pathExcel = Path.GetFullPath("../../Salida/mi_archivo.xls");
+                }
+                else
+                {
+                    bytes = generador.GenerarExcel(GenerarExcelNPOI.TipoFormato.XLSX);
+                    pathExcel = Path.GetFullPath("../../Salida/mi_archivo.xlsx");
+                }
+                               
+                File.WriteAllBytes(pathExcel, bytes);
+                linkLabel1.Text = Path.GetFileName(pathExcel);
             }
             catch (Exception ex)
             {
@@ -51,33 +61,15 @@ namespace Ej1_NPOI
             }
         }
 
-        private void btnXLSX_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GenerarExcelNPOI generador = new GenerarExcelNPOI();
-                byte[] bytes = generador.GenerarExcel(GenerarExcelNPOI.TipoFormato.XLSX);
-                string mimeType = generador.GetMimeType(GenerarExcelNPOI.TipoFormato.XLSX);
-
-                string filePath = "../../Salida/mi_archivo.xlsx";
-                File.WriteAllBytes(filePath, bytes);
-
-                linkLabel1.Text = Path.GetFullPath(filePath);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string path = linkLabel1.Text;
             try
             {
-                if (File.Exists(path))
+                if (File.Exists(pathExcel))
                 {
-                    System.Diagnostics.Process.Start(path);
+                    //System.Diagnostics.Process.Start(pathExcel);
+                    System.Diagnostics.Process.Start(pathExcel);
                 }
             }
             catch (Exception ex)
@@ -86,22 +78,34 @@ namespace Ej1_NPOI
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEPPlus_Click(object sender, EventArgs e)
         {
             try
             {
-                GenerarExcelMiniExcel generador = new GenerarExcelMiniExcel();
-                byte[] bytes = generador.GenerarExcel1();
-                string mimeType = generador.GetMimeType(GenerarExcelMiniExcel.TipoFormato.XLS);
+                GenerarExcelEPlus generador = new GenerarExcelEPlus();
+                byte[] bytes = generador.Generar();
+                pathExcel = Path.GetFullPath("../../Salida/mi_archivo.xlsx");
 
-                string filePath = "../../Salida/mi_archivo.xls";
-                File.WriteAllBytes(filePath, bytes);
-
-                linkLabel1.Text = Path.GetFullPath(filePath);
+                File.WriteAllBytes(pathExcel, bytes);
+                linkLabel1.Text = Path.GetFileName(pathExcel);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                btnNPOI.Enabled = true;
+                btnEPPlus.Enabled = false;
+            }
+            else
+            {
+                btnNPOI.Enabled = true;
+                btnEPPlus.Enabled = true;
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ej1_NPOI
+namespace Ej1_NPOI_Desktop
 {
     static class Program
     {

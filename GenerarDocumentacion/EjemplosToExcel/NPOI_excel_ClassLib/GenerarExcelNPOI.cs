@@ -1,7 +1,7 @@
-﻿using Ej1_NPOI.Models;
-using NPOI.HSSF.UserModel;
+﻿using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
+using NPOI_excel_ClassLib.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -81,7 +81,7 @@ namespace NPOI_excel_ClassLib
             styleFecha.SetFont(font);
 
             ICellStyle styleHora = wb.CreateCellStyle();
-            styleHora.DataFormat = wb.CreateDataFormat().GetFormat("H:m:ss;@");
+            styleHora.DataFormat = wb.CreateDataFormat().GetFormat("h:m:ss;@");
             styleHora.SetFont(font);
 
             ICellStyle styleMoneda = wb.CreateCellStyle();
@@ -159,7 +159,7 @@ namespace NPOI_excel_ClassLib
                 //
                 #region hora
                 row.CreateCell(nroColumna);
-                row.GetCell(nroColumna).SetCellValue($"{hora:h:m:ss}");
+                row.GetCell(nroColumna).SetCellValue($"{hora:HH:mm:ss}");
                 row.GetCell(nroColumna).CellStyle = styleHora;
                 nroColumna++;
                 #endregion

@@ -7,8 +7,8 @@
     <ProjectGuid>{22CE985A-E890-4779-B604-E3DDF279C6E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiniExcel_excel_ClassLib</RootNamespace>
-    <AssemblyName>MiniExcel_excel_ClassLib</AssemblyName>
+    <RootNamespace>EPPlus_excel_ClassLib</RootNamespace>
+    <AssemblyName>EPPlus_excel_ClassLib</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -72,7 +72,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerarExcelMiniExcel.cs" />
+    <Compile Include="GenerarExcelEPlus.cs" />
     <Compile Include="Models\Ejemplo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

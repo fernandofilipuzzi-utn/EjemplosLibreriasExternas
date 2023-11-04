@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej3_NPOI_API", "Ej3_NPOI_AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej2_NPOI_Web", "Ej2_NPOI_Web\Ej2_NPOI_Web.csproj", "{13320FDA-B838-4F2A-9BC2-314D6DF1AA95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniExcel_excel_ClassLib", "MiniExcel_excel_ClassLib\MiniExcel_excel_ClassLib.csproj", "{22CE985A-E890-4779-B604-E3DDF279C6E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPPlus_excel_ClassLib", "EPPlus_excel_ClassLib\EPPlus_excel_ClassLib.csproj", "{22CE985A-E890-4779-B604-E3DDF279C6E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

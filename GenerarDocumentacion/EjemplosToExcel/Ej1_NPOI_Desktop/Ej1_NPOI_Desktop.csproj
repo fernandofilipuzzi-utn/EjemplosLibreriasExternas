@@ -270,9 +270,9 @@
     <Content Include="info.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MiniExcel_excel_ClassLib\MiniExcel_excel_ClassLib.csproj">
+    <ProjectReference Include="..\EPPlus_excel_ClassLib\EPPlus_excel_ClassLib.csproj">
       <Project>{22ce985a-e890-4779-b604-e3ddf279c6e6}</Project>
-      <Name>MiniExcel_excel_ClassLib</Name>
+      <Name>EPPlus_excel_ClassLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\NPOI_excel_ClassLib\NPOI_excel_ClassLib.csproj">
       <Project>{ae7d44e5-956c-4fc5-b04d-164e6e926ecc}</Project>
