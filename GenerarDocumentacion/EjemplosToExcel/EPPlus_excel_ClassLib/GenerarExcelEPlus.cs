@@ -50,8 +50,20 @@ namespace EPPlus_excel_ClassLib
                 {
                     sheet.SetValue($"A{fila}", ejemplo.Texto);
                     sheet.Cells[$"B{fila}"].Value = ejemplo.Numero;
-                    sheet.Cells[$"C{fila}"].Value = DateTime.Parse($"{ejemplo.Fecha:dd/MM/yyyy}");
-                    sheet.Cells[$"D{fila}"].Value = new TimeSpan(ejemplo.Fecha.Hour, ejemplo.Fecha.Minute, ejemplo.Fecha.Second);
+
+                    #region alternativa 1
+                    int oaFecha = (int)ejemplo.Fecha.ToOADate();
+                    double oaTiempo = ejemplo.Fecha.TimeOfDay.TotalDays;
+
+                    sheet.Cells[$"C{fila}"].Value = oaFecha;// DateTime.Parse($"{ejemplo.Fecha:dd/MM/yyyy}");
+                    sheet.Cells[$"D{fila}"].Value = oaTiempo;// new TimeSpan(ejemplo.Fecha.Hour, ejemplo.Fecha.Minute, ejemplo.Fecha.Second);
+                    #endregion
+
+                    #region alternativa 2
+                    //sheet.Cells[$"C{fila}"].Value = DateTime.Parse($"{ejemplo.Fecha:dd/MM/yyyy}");
+                    //sheet.Cells[$"D{fila}"].Value = new TimeSpan(ejemplo.Fecha.Hour, ejemplo.Fecha.Minute, ejemplo.Fecha.Second);
+                    #endregion
+
                     sheet.Cells[$"E{fila}"].Value = ejemplo.Moneda;
 
                     fila++;

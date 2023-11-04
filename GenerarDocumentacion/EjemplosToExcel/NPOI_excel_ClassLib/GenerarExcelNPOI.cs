@@ -77,11 +77,11 @@ namespace NPOI_excel_ClassLib
             styleNumero.SetFont(font);
 
             ICellStyle styleFecha = wb.CreateCellStyle();
-            styleFecha.DataFormat = wb.CreateDataFormat().GetFormat(" dd/mm/yy;@");
+            styleFecha.DataFormat = wb.CreateDataFormat().GetFormat("dd/mm/yy;@");
             styleFecha.SetFont(font);
 
             ICellStyle styleHora = wb.CreateCellStyle();
-            styleHora.DataFormat = wb.CreateDataFormat().GetFormat("h:m:ss;@");
+            styleHora.DataFormat = wb.CreateDataFormat().GetFormat("hh:mm:ss;@");
             styleHora.SetFont(font);
 
             ICellStyle styleMoneda = wb.CreateCellStyle();
@@ -147,21 +147,40 @@ namespace NPOI_excel_ClassLib
                 //              
                 //
                 DateTime fecha = ejemplo.Fecha;
+                DateTime hora = fecha;
+                int oaFecha = (int)ejemplo.Fecha.ToOADate();
+                double oaTiempo = ejemplo.Fecha.TimeOfDay.TotalDays;
                 //
-                #region fecha               
+                #region fecha - alternativa 1    
+                //esta alternativa debería excel hacer que tome por defecto el tipo Fecha o Date
                 row.CreateCell(nroColumna);
-                row.GetCell(nroColumna).SetCellValue(DateTime.Parse($"{fecha:dd/MM/yyyy}"));
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).SetCellValue(oaFecha);                
                 row.GetCell(nroColumna).CellStyle = styleFecha;
                 nroColumna++;
-                #endregion
-                //!
-                DateTime hora = fecha;
+                #endregion              
                 //
-                #region hora
+                #region fecha - alternativa 2             
+                //row.CreateCell(nroColumna);
+                //row.GetCell(nroColumna).SetCellValue(DateTime.Parse($"{fecha:dd/MM/yyyy}"));
+                //row.GetCell(nroColumna).CellStyle = styleFecha;
+                //nroColumna++;
+                #endregion              
+                //
+                #region hora -alternativa 1
+                //esta alternativa debería excel hacer que tome por defecto el tipo Hora o Time
                 row.CreateCell(nroColumna);
-                row.GetCell(nroColumna).SetCellValue($"{hora:HH:mm:ss}");
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).SetCellValue(oaTiempo);
                 row.GetCell(nroColumna).CellStyle = styleHora;
                 nroColumna++;
+                #endregion
+
+                #region hora - alternativa 2
+                //row.CreateCell(nroColumna);
+                //row.GetCell(nroColumna).SetCellValue($"{hora:HH:mm:ss}");
+                //row.GetCell(nroColumna).CellStyle = styleHora;
+                //nroColumna++;
                 #endregion
                 //
                 double moneda = ejemplo.Moneda;
