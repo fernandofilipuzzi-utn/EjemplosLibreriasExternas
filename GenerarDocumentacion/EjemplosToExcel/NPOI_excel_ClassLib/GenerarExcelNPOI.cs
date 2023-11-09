@@ -76,6 +76,28 @@ namespace NPOI_excel_ClassLib
             styleNumero.DataFormat = wb.CreateDataFormat().GetFormat("###,###,###;@");
             styleNumero.SetFont(font);
 
+            ICellStyle styleNumero1 = wb.CreateCellStyle();
+            styleNumero1.DataFormat = wb.CreateDataFormat().GetFormat("0;[Red]-0;@");
+            styleNumero1.Alignment = HorizontalAlignment.Center;
+            //color
+            styleNumero1.FillForegroundColor = IndexedColors.Yellow.Index;
+            styleNumero1.FillPattern = FillPattern.SolidForeground;
+            //
+            styleNumero1.BorderTop = BorderStyle.Thin;
+            styleNumero1.BorderBottom = BorderStyle.Thin;
+            styleNumero1.BorderLeft = BorderStyle.Thin;
+            styleNumero1.BorderRight = BorderStyle.Thin;
+            styleNumero1.TopBorderColor = IndexedColors.Grey25Percent.Index;
+            styleNumero1.BottomBorderColor = IndexedColors.Grey25Percent.Index;
+            styleNumero1.LeftBorderColor = IndexedColors.Grey25Percent.Index;
+            styleNumero1.RightBorderColor = IndexedColors.Grey25Percent.Index;
+            //
+            styleNumero1.SetFont(font);
+
+            ICellStyle styleCuit = wb.CreateCellStyle();
+            styleCuit.DataFormat = wb.CreateDataFormat().GetFormat("##-########-#;@");
+            styleCuit.SetFont(font);
+
             ICellStyle styleFecha = wb.CreateCellStyle();
             styleFecha.DataFormat = wb.CreateDataFormat().GetFormat("dd/mm/yy;@");
             styleFecha.SetFont(font);
@@ -101,6 +123,18 @@ namespace NPOI_excel_ClassLib
             headerRow.CreateCell(nroColumna);
             headerRow.GetCell(nroColumna).SetCellType(CellType.String);
             headerRow.GetCell(nroColumna).SetCellValue("NUMERO");
+            headerRow.GetCell(nroColumna).CellStyle = styleHText;
+            nroColumna++;
+
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellType(CellType.String);
+            headerRow.GetCell(nroColumna).SetCellValue("NUMERO");
+            headerRow.GetCell(nroColumna).CellStyle = styleHText;
+            nroColumna++;
+
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellType(CellType.String);
+            headerRow.GetCell(nroColumna).SetCellValue("CUIL");
             headerRow.GetCell(nroColumna).CellStyle = styleHText;
             nroColumna++;
 
@@ -139,12 +173,34 @@ namespace NPOI_excel_ClassLib
                 //
                 #region numero
                 row.CreateCell(nroColumna);
+                //row.GetCell(nroColumna).SetCellType(CellType.Text);
+                row.GetCell(nroColumna).SetCellValue(numero);
+                row.GetCell(nroColumna).CellStyle = styleNumero1;
+                nroColumna++;
+                #endregion
+                //
+                #region numero
+                row.CreateCell(nroColumna);
                 row.GetCell(nroColumna).SetCellType(CellType.Numeric);
                 row.GetCell(nroColumna).SetCellValue(numero);
                 row.GetCell(nroColumna).CellStyle = styleNumero;
                 nroColumna++;
                 #endregion
-                //              
+                //
+                long cuit = ejemplo.Cuit;
+                string cuitString = cuit.ToString();
+                if (cuitString.Length == 10)
+                {
+                    cuitString=cuitString.Insert(2, "0");
+                }
+                //
+                #region cuit
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).SetCellValue(long.Parse(cuitString));
+                row.GetCell(nroColumna).CellStyle = styleCuit;
+                nroColumna++;
+                #endregion
                 //
                 DateTime fecha = ejemplo.Fecha;
                 DateTime hora = fecha;
