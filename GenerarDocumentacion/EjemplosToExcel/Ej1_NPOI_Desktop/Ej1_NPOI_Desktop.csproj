@@ -267,8 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="docs\desktop.jpg" />
-    <Content Include="docs\excel_epplus.jpg" />
-    <Content Include="docs\excel_npoi.jpg" />
     <Content Include="info.txt" />
   </ItemGroup>
   <ItemGroup>
