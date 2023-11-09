@@ -266,6 +266,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="docs\desktop.jpg" />
     <Content Include="docs\vista.png" />
     <Content Include="info.txt" />
   </ItemGroup>
