@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCoder_ClassLib", "QRCoder
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej1_QR_Desktop", "Ej1_QR_Desktop\Ej1_QR_Desktop.csproj", "{9BEB0D39-4322-4D7A-8590-DAC7938B10C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej2_QR_Desktop", "Ej2_QR_Desktop\Ej2_QR_Desktop.csproj", "{E128B096-A7D0-42C0-927A-55A7CE7F0BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9BEB0D39-4322-4D7A-8590-DAC7938B10C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BEB0D39-4322-4D7A-8590-DAC7938B10C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BEB0D39-4322-4D7A-8590-DAC7938B10C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E128B096-A7D0-42C0-927A-55A7CE7F0BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E128B096-A7D0-42C0-927A-55A7CE7F0BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E128B096-A7D0-42C0-927A-55A7CE7F0BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E128B096-A7D0-42C0-927A-55A7CE7F0BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
