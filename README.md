@@ -120,7 +120,7 @@
 ### QRCoder
 
 <div align="center">
-        <img style="width:300px;" src="GenerarDocumentacion/EjemplosQR/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
+        <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
 </div>
 
 ```csharp
