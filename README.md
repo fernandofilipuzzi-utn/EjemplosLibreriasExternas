@@ -1,9 +1,9 @@
 # Ejemplos aplicando librerías de terceros
 
-# #
 
+### Generación de documentos PDF desde documetos HTML
 <details>
-<summary>Generación de documentos PDF desde documetos HTML</summary>
+<summary>Ver</summary>
 
 ### iTextSharp
 
@@ -11,10 +11,10 @@
 
 </details>
 
-# #
 
+### Generación de documentos EXCEL
 <details>
-<summary>Generación de documentos EXCEL</summary>
+<summary>Ver</summary>
 
 <details>
 <summary>Vista prueba aplicación desktop de prueba</summary>
@@ -24,7 +24,6 @@
 </div>
 </details>
 
-# #
 
 <details>
 <summary>Vista prueba aplicación web de prueba</summary>
@@ -113,12 +112,13 @@
 
 </details>
 
-# #
 
+### Generación de QR
 <details>
-<summary> Generación de QR</summary>
+<summary>Ver</summary>
 
 ### QRCoder
+
 <div align="center">
         <img style="width:300px;" src="GenerarDocumentacion/EjemplosQR/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
 </div>
