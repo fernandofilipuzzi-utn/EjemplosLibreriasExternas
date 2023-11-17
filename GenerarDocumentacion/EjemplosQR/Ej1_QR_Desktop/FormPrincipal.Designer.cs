@@ -29,21 +29,21 @@ namespace Ej1_QR_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNPOI = new System.Windows.Forms.Button();
+            this.btnQR = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnNPOI
+            // btnQR
             // 
-            this.btnNPOI.Location = new System.Drawing.Point(303, 70);
-            this.btnNPOI.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNPOI.Name = "btnNPOI";
-            this.btnNPOI.Size = new System.Drawing.Size(184, 61);
-            this.btnNPOI.TabIndex = 25;
-            this.btnNPOI.Text = "Generar QR";
-            this.btnNPOI.UseVisualStyleBackColor = true;
-            this.btnNPOI.Click += new System.EventHandler(this.btnQR_Click);
+            this.btnQR.Location = new System.Drawing.Point(303, 70);
+            this.btnQR.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(184, 61);
+            this.btnQR.TabIndex = 25;
+            this.btnQR.Text = "Generar QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // pictureBox1
             // 
@@ -59,7 +59,7 @@ namespace Ej1_QR_Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 243);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnNPOI);
+            this.Controls.Add(this.btnQR);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -68,14 +68,13 @@ namespace Ej1_QR_Desktop
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejemplos";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnNPOI;
+        private System.Windows.Forms.Button btnQR;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
