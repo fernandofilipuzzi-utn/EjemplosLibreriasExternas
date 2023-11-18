@@ -121,6 +121,7 @@
 
 <div align="center">
         <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
+ <p>Ejemplo 1.</p>
 </div>
 
 ```csharp
@@ -129,6 +130,15 @@
   QRCode qrCode = new QRCode(qrCodeData);
   Bitmap qrCodeImage = qrCode.GetGraphic(sizeModulo);
 ```
+<div align="center">
+         <p>Ejemplo 2. Copia a portapeles</p>
+</div>
+
+<div align="center">
+        <img style="width:300px;" src="https://github.com/fernandofilipuzzi-utn/EjemplosLibreriasExternas/blob/main/GeneracionQR/EjemplosQREncode/Ej3_QR_Desktop/docs/pantallazo.jpg"/>
+ <p>Ejemplo 3.  Copia a portapeles, Colores e icono.</p>
+</div>
+
 
 </details>
 
