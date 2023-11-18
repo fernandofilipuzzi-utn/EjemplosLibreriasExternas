@@ -123,7 +123,7 @@
 
 <div align="center">
         <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
- <p>Ejemplo 1. Windows Form</p>
+       <p>Ejemplo 1. Windows Form</p>
 </div>
 
 ```csharp
@@ -138,7 +138,6 @@
 <div align="center">
         <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Web/docs/pantallazo.jpg"/>
         <p>Ejemplo 1. Web. Generando QR en base 64</p>
- <p>Ejemplo 1.</p>
 </div>
 
 ```csharp
