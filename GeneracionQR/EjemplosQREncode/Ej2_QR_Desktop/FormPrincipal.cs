@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ej2_QR_Desktop
+namespace Ej3_QR_Desktop
 {
     public partial class FormPrincipal : Form
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Ej2_QR_Desktop
+namespace Ej3_QR_Desktop
 {
     partial class FormPrincipal
     {

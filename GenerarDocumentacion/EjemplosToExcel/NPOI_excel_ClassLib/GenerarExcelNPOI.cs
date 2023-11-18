@@ -63,26 +63,32 @@ namespace NPOI_excel_ClassLib
             font.FontHeightInPoints = 10;
             #endregion
 
-            #region styles                
+            #region styles           
+            
             ICellStyle styleHText = wb.CreateCellStyle();
             styleHText.DataFormat = wb.CreateDataFormat().GetFormat("text");
+            styleHText.WrapText = true;
             styleHText.SetFont(hFont);
 
+            #region formato de celda texto
             ICellStyle styleText = wb.CreateCellStyle();
             styleText.DataFormat = wb.CreateDataFormat().GetFormat("text");
             styleText.SetFont(font);
+            #endregion
 
-            ICellStyle styleNumero = wb.CreateCellStyle();
-            styleNumero.DataFormat = wb.CreateDataFormat().GetFormat("###,###,###;@");
-            styleNumero.SetFont(font);
+            #region formato de celda numerico
+            ICellStyle stylesShortNumero = wb.CreateCellStyle();
+            stylesShortNumero.DataFormat = wb.CreateDataFormat().GetFormat("0");
+            stylesShortNumero.SetFont(font);
+            #endregion
 
+            #region formato de celda Personalizado - coloreado y centrado
             ICellStyle styleNumero1 = wb.CreateCellStyle();
             styleNumero1.DataFormat = wb.CreateDataFormat().GetFormat("0;[Red]-0;@");
+            styleNumero1.SetFont(font);
             styleNumero1.Alignment = HorizontalAlignment.Center;
-            //color
             styleNumero1.FillForegroundColor = IndexedColors.Yellow.Index;
             styleNumero1.FillPattern = FillPattern.SolidForeground;
-            //
             styleNumero1.BorderTop = BorderStyle.Thin;
             styleNumero1.BorderBottom = BorderStyle.Thin;
             styleNumero1.BorderLeft = BorderStyle.Thin;
@@ -91,24 +97,37 @@ namespace NPOI_excel_ClassLib
             styleNumero1.BottomBorderColor = IndexedColors.Grey25Percent.Index;
             styleNumero1.LeftBorderColor = IndexedColors.Grey25Percent.Index;
             styleNumero1.RightBorderColor = IndexedColors.Grey25Percent.Index;
-            //
-            styleNumero1.SetFont(font);
+            #endregion
 
+            #region formato de celda Personalizado 
+            ICellStyle styleNumero = wb.CreateCellStyle();
+            styleNumero.DataFormat = wb.CreateDataFormat().GetFormat("###,###,##0");
+            styleNumero.SetFont(font);
+            #endregion
+            //
+            #region formato de celda Personalizado
             ICellStyle styleCuit = wb.CreateCellStyle();
             styleCuit.DataFormat = wb.CreateDataFormat().GetFormat("##-########-#;@");
             styleCuit.SetFont(font);
-
+            #endregion
+            //
+            #region formato de celda Fecha
             ICellStyle styleFecha = wb.CreateCellStyle();
             styleFecha.DataFormat = wb.CreateDataFormat().GetFormat("dd/mm/yy;@");
             styleFecha.SetFont(font);
-
+            #endregion
+            //
+            #region formato de celda Hora
             ICellStyle styleHora = wb.CreateCellStyle();
             styleHora.DataFormat = wb.CreateDataFormat().GetFormat("hh:mm:ss;@");
             styleHora.SetFont(font);
-
+            #endregion
+            //
+            #region formato de celda Personalizado
             ICellStyle styleMoneda = wb.CreateCellStyle();
             styleMoneda.DataFormat = wb.CreateDataFormat().GetFormat("$* #,##0.00;@");
             styleMoneda.SetFont(font);
+            #endregion
             #endregion
 
             #region cabecera
@@ -117,6 +136,12 @@ namespace NPOI_excel_ClassLib
             headerRow.CreateCell(nroColumna);
             headerRow.GetCell(nroColumna).SetCellType(CellType.String);
             headerRow.GetCell(nroColumna).SetCellValue("TEXTO");
+            headerRow.GetCell(nroColumna).CellStyle = styleHText;
+            nroColumna++;
+
+            headerRow.CreateCell(nroColumna);
+            headerRow.GetCell(nroColumna).SetCellType(CellType.String);
+            headerRow.GetCell(nroColumna).SetCellValue("NUMERO CORTO");
             headerRow.GetCell(nroColumna).CellStyle = styleHText;
             nroColumna++;
 
@@ -169,11 +194,22 @@ namespace NPOI_excel_ClassLib
                 #endregion
                 //
                 //
+                int numeroCorto = ejemplo.NumeroCorto;
+                //
+                //
+                #region numero
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
+                row.GetCell(nroColumna).SetCellValue(numeroCorto);
+                row.GetCell(nroColumna).CellStyle = stylesShortNumero;
+                nroColumna++;
+                #endregion
+                //
                 int numero = ejemplo.Numero;
                 //
                 #region numero
                 row.CreateCell(nroColumna);
-                //row.GetCell(nroColumna).SetCellType(CellType.Text);
+                row.GetCell(nroColumna).SetCellType(CellType.Numeric);
                 row.GetCell(nroColumna).SetCellValue(numero);
                 row.GetCell(nroColumna).CellStyle = styleNumero1;
                 nroColumna++;
@@ -248,7 +284,9 @@ namespace NPOI_excel_ClassLib
                 row.GetCell(nroColumna).CellStyle = styleMoneda;
                 nroColumna++;
                 #endregion
-                //                
+                //
+                //     
+
             }
 
             #region rediminesionando las columnas
