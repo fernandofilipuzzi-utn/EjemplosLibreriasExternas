@@ -38,9 +38,10 @@ namespace Ej2_QR_Desktop
                 {
                     g.Clear(Color.White); 
                     g.DrawImage(qrCodeImage, 0, 0);
+                    Clipboard.SetImage(opaqueImage);
                 }
 
-                Clipboard.SetImage(opaqueImage);
+                
             }
         }
     }
