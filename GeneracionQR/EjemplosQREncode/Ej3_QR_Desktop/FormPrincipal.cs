@@ -35,6 +35,7 @@ namespace Ej3_QR_Desktop
 
                 qrCodeImage = qrCode.GetGraphic(20, pbColor.BackColor, pbBackColor.BackColor,
                         RecolorImage(logoBitmap, Color.Black, pbColor.BackColor, pbBackColor.BackColor));
+
             }
             pictureBox1.Image = new Bitmap(qrCodeImage, 200, 200);
         }

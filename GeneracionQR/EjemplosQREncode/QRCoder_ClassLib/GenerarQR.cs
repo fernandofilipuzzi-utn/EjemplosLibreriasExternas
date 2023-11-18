@@ -29,6 +29,5 @@ namespace QRCoder_ClassLib
             }
             return imageBytes;
         }
-
     }
 }
