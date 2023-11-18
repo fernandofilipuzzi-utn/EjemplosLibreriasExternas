@@ -118,10 +118,12 @@
 <summary>Ver</summary>
 
 ### QRCoder
+# #
+#### Ejemplo 1. Desktop
 
 <div align="center">
         <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Desktop/docs/pantallazo.jpg"/>
- <p>Ejemplo 1.</p>
+ <p>Ejemplo 1. Windows Form</p>
 </div>
 
 ```csharp
@@ -130,9 +132,43 @@
   QRCode qrCode = new QRCode(qrCodeData);
   Bitmap qrCodeImage = qrCode.GetGraphic(sizeModulo);
 ```
+# #
+#### Ejemplo 1. Web
+
+<div align="center">
+        <img style="width:300px;" src="GeneracionQR/EjemplosQREncode/Ej1_QR_Web/docs/pantallazo.jpg"/>
+        <p>Ejemplo 1. Web. Generando QR en base 64</p>
+ <p>Ejemplo 1.</p>
+</div>
+
+```csharp
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                string base64Image = GenerarQR("valor de prueba");
+                imgQR.ImageUrl = "data:image/png;base64," + base64Image;
+            }
+        }
+        private string GenerarQR(string data)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(data, QRCodeGenerator.ECCLevel.Q);
+            
+            Base64QRCode qrCode = new Base64QRCode(qrCodeData);
+            string qrCodeImageAsBase64 = qrCode.GetGraphic(20, Color.Blue, Color.Transparent, true);
+            return qrCodeImageAsBase64;
+        }
+```
+# #
+#### Ejemplo 2. Windows Form
+
 <div align="center">
          <p>Ejemplo 2. Copia a portapeles</p>
 </div>
+
+# #
+#### Ejemplo 3. Windows Form
 
 <div align="center">
         <img style="width:300px;" src="https://github.com/fernandofilipuzzi-utn/EjemplosLibreriasExternas/blob/main/GeneracionQR/EjemplosQREncode/Ej3_QR_Desktop/docs/pantallazo.jpg"/>
