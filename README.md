@@ -5,9 +5,35 @@
 <details>
 <summary>Ver</summary>
 
-### iTextSharp
+### itext7.pdfhtml
+
+```csharp
+        public void GenerarPDFFromHTML(string PathHtml, string PathPdf)
+        {
+            using (FileStream htmlSource = File.Open(PathHtml, FileMode.Open))
+            using (FileStream pdfDest = File.Open(PathPdf, FileMode.Create))
+            {
+                ConverterProperties properties = new ConverterProperties();
+                properties.SetBaseUri(Path.GetDirectoryName(PathHtml));
+                HtmlConverter.ConvertToPdf(htmlSource, pdfDest, properties);
+            }
+        }
+```
 
 ### SelectPDF
+
+```csharp
+        public void GenerarPDFFromHTML(string PathHtml,string PathPdf)
+        {
+            HtmlToPdf converter = new HtmlToPdf();
+
+            PdfDocument doc = converter.ConvertUrl(PathHtml);
+
+            doc.Save(PathPdf);
+            doc.Close();
+        }
+```
+
 
 </details>
 
