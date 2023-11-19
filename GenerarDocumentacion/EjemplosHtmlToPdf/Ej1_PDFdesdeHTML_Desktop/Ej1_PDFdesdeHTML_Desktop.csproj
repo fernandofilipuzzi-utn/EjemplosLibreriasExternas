@@ -199,6 +199,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="docs\pantallazo.jpg" />
+    <Content Include="nofile.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="plantillas\modelo1\css\style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

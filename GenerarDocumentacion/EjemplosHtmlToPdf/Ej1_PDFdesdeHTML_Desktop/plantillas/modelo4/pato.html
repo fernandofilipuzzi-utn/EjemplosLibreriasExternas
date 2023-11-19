@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FAFAFA;
+      font: 12pt "Tahoma";
+    }
+
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .page {
+      width: 21cm;
+      min-height: 29.7cm;
+      padding: 2cm;
+      margin: 1cm auto;
+      border: 1px #D3D3D3 solid;
+      border-radius: 5px;
+      background: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .subpage {
+      padding: 1cm;
+      border: 5px red solid;
+      height: 256mm;
+      outline: 2cm #FFEAEA solid;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  <div class="page">
+
+    <div>
+      <img src="img/pato.jpg" style="transform:rotate(90deg); width:10%" />
+
+    </div>
+
+    <div class="page">
+      <div class="subpage">Page 2/2</div>
+    </div>
+ 
+
+</body>
+
+</html>

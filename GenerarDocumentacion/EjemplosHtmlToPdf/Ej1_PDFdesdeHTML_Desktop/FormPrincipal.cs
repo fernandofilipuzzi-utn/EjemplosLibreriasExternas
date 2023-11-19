@@ -19,24 +19,33 @@ namespace Ej1_PDFdesdeHTML_Desktop
 {
     public partial class FormPrincipal : Form
     {
+        string PathHtml = "";
+        string PathPdf = "";
+
         public FormPrincipal()
         {
             InitializeComponent();
         }
 
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            PathHtml = Path.GetFullPath($@"..\..\plantillas");
+            PathPdf = Path.GetFullPath(@"salida\");
+
+            openFileDialog1.InitialDirectory = Path.GetFullPath(PathHtml);
+        }
+
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {
-            string text = comboBox1.Text;
-
-            string PathHtml = Path.GetFullPath($@"..\..\plantillas\{text}\recibos_logo.html");
-            string PathPdf = Path.GetFullPath(@"..\..\salida\recibos_logo.pdf");
-
             if (comboBox2.SelectedIndex != -1)
             {
                 try
                 {
                     if (File.Exists(PathHtml))
                     {
+                        vwPDF.Source = new Uri(Path.Combine(Application.StartupPath,"nofile.html"));
+
+                        PathPdf = Path.Combine(Path.GetDirectoryName(PathPdf), "salida.pdf");
 
                         if (comboBox2.SelectedIndex == 0)
                         {
@@ -49,11 +58,8 @@ namespace Ej1_PDFdesdeHTML_Desktop
                             gen.GenerarPDFFromHTML(PathHtml, PathPdf);
                         }
 
-
-                        //MessageBox.Show("listo");
-
-                        linkLabel1.Text = Path.GetFullPath(PathPdf);
-                        webView21.Source = new Uri(PathPdf);
+                        lnklbficheroPDF.Text = Path.GetFileName(PathPdf);
+                        vwPDF.Source = new Uri(PathPdf);
                     }
                     else
                     {
@@ -71,9 +77,9 @@ namespace Ej1_PDFdesdeHTML_Desktop
             }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnklbficheroPDF_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string path = linkLabel1.Text;
+            string path = PathPdf;
 
             try
             {
@@ -86,6 +92,40 @@ namespace Ej1_PDFdesdeHTML_Desktop
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lnklbficheroHTML_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string path = PathHtml;
+            try
+            {
+                if (File.Exists(path))
+                {
+                    //System.Diagnostics.Process.Start(@"notepad.exe", PathHtml);
+
+                    var processInfo = new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = "code",
+                        Arguments = Path.GetDirectoryName(PathHtml),
+                    };
+
+                    System.Diagnostics.Process.Start(processInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string pathHTML = openFileDialog1.FileName;
+                lnklbficheroHTML.Text = Path.GetFileName(pathHTML);
+                PathHtml = Path.GetFullPath(pathHTML);
             }
         }
     }
