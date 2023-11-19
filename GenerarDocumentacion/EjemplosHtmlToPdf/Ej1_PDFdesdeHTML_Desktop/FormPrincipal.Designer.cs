@@ -34,6 +34,8 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGenerarPDF
@@ -50,7 +52,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(43, 166);
+            this.linkLabel1.Location = new System.Drawing.Point(12, 112);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(80, 20);
             this.linkLabel1.TabIndex = 28;
@@ -65,7 +67,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             "modelo1",
             "modelo2",
             "modelo3"});
-            this.comboBox1.Location = new System.Drawing.Point(47, 135);
+            this.comboBox1.Location = new System.Drawing.Point(191, 69);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(205, 28);
             this.comboBox1.TabIndex = 29;
@@ -90,11 +92,24 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.label1.TabIndex = 31;
             this.label1.Text = "Seleccionar librería";
             // 
+            // webView21
+            // 
+            this.webView21.AllowExternalDrop = true;
+            this.webView21.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Location = new System.Drawing.Point(12, 135);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(805, 536);
+            this.webView21.TabIndex = 32;
+            this.webView21.ZoomFactor = 1D;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 204);
+            this.ClientSize = new System.Drawing.Size(829, 683);
+            this.Controls.Add(this.webView21);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -104,6 +119,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,6 +132,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }
 

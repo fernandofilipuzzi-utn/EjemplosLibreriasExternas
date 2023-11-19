@@ -50,9 +50,10 @@ namespace Ej1_PDFdesdeHTML_Desktop
                         }
 
 
-                        MessageBox.Show("listo");
+                        //MessageBox.Show("listo");
 
                         linkLabel1.Text = Path.GetFullPath(PathPdf);
+                        webView21.Source = new Uri(PathPdf);
                     }
                     else
                     {
@@ -78,6 +79,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             {
                 if (File.Exists(path))
                 {
+                    
                     System.Diagnostics.Process.Start(path);
                 }
             }
