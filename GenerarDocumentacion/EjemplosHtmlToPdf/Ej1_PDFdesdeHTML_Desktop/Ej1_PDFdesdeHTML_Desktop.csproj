@@ -206,6 +206,9 @@
     <Content Include="plantillas\modelo3\css\style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="plantillas\modelo3\img\pato.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="plantillas\modelo3\img\qr.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
