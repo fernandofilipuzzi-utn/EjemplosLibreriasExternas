@@ -1,0 +1,51 @@
+﻿.pagina {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 1cm;
+}
+
+.fuente {
+    font-family: Courier New, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.col_valores {
+    text-align: right;
+}
+
+.documento {
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 20px 20px;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.recibo {
+    display: flex;
+    flex-direction: column;
+}
+
+.cuota {
+    display: flex;
+    flex-direction: column;
+    background-color: #CCCCCC;
+    padding: 10px 30px 20px 20px;
+    border: 1px solid black;
+}
+
+.detalle {
+    display: flex;
+    flex-direction: row;
+}
+
+.page_nueva {
+    page-break-before: always
+}

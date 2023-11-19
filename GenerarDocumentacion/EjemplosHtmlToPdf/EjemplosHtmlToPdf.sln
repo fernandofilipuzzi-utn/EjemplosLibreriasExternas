@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33920.266
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej1", "Ej1\Ej1.csproj", "{2C214913-45A0-4058-8905-39C49E01BC91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej1_PDFdesdeHTML_Desktop", "Ej1_PDFdesdeHTML_Desktop\Ej1_PDFdesdeHTML_Desktop.csproj", "{F5DE18FF-5054-47CB-A724-D704759F252A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej2", "Ej2\Ej2.csproj", "{6C8AA708-53CD-440E-854A-58CDCE2F36A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "selectPDFClassLib", "selectPDFClassLib\selectPDFClassLib.csproj", "{233A694F-01D4-4653-8046-3DC9F6349814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej3_iTextSharp", "Ej3_iTextSharp\Ej3_iTextSharp.csproj", "{12E60787-E8EF-4037-9507-62BE9CF0ABFA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ej4_SelectPDF", "Ej4_SelectPDF\Ej4_SelectPDF.csproj", "{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itext7.pdfhtmlClassLib", "itext7.pdfhtmlClassLib\itext7.pdfhtmlClassLib.csproj", "{FA8CAC45-2155-4050-ADA9-54ACDE15F9D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2C214913-45A0-4058-8905-39C49E01BC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C214913-45A0-4058-8905-39C49E01BC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C214913-45A0-4058-8905-39C49E01BC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C214913-45A0-4058-8905-39C49E01BC91}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C8AA708-53CD-440E-854A-58CDCE2F36A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C8AA708-53CD-440E-854A-58CDCE2F36A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C8AA708-53CD-440E-854A-58CDCE2F36A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C8AA708-53CD-440E-854A-58CDCE2F36A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12E60787-E8EF-4037-9507-62BE9CF0ABFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12E60787-E8EF-4037-9507-62BE9CF0ABFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12E60787-E8EF-4037-9507-62BE9CF0ABFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12E60787-E8EF-4037-9507-62BE9CF0ABFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06133D7C-8E98-4BD7-AA55-1D991C42F0B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5DE18FF-5054-47CB-A724-D704759F252A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DE18FF-5054-47CB-A724-D704759F252A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DE18FF-5054-47CB-A724-D704759F252A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DE18FF-5054-47CB-A724-D704759F252A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233A694F-01D4-4653-8046-3DC9F6349814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233A694F-01D4-4653-8046-3DC9F6349814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233A694F-01D4-4653-8046-3DC9F6349814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233A694F-01D4-4653-8046-3DC9F6349814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8CAC45-2155-4050-ADA9-54ACDE15F9D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8CAC45-2155-4050-ADA9-54ACDE15F9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8CAC45-2155-4050-ADA9-54ACDE15F9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8CAC45-2155-4050-ADA9-54ACDE15F9D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
