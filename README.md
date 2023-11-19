@@ -4,6 +4,16 @@
 ### Generación de documentos PDF desde documetos HTML
 <details>
 <summary>Ver</summary>
+<details>
+<summary>Vista prueba aplicación desktop de prueba</summary>
+
+La aplicación de prueba se muestra en la siguiente figura, permite ir editando con otro editor como Visual Studio Code e ir regenerando el pdf para ver como va quedando.
+<div align="center">
+        <img style="width:100%;" src="GenerarDocumentacion/EjemplosHtmlToPdf/Ej1_PDFdesdeHTML_Desktop/docs/pantallazo.jpg"/>
+        <p>Figura 1. A la izquierda la aplicación de prueba, a la derecha Visual Studio Code</p>
+</div>
+
+</details>
 
 ### itext7.pdfhtml
 
