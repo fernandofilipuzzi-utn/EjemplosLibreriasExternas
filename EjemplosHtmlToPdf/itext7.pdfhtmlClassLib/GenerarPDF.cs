@@ -36,6 +36,28 @@ namespace itext7.pdfhtmlClassLib
             }
         }
 
+
+        public byte[] GenerarPDFFromHTML(string PathHtml)
+        {
+            byte[] bytes = null;
+            string htmlContent = GetHtmlContentFromUrl(PathHtml);
+
+            using (MemoryStream htmlStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(htmlContent)))
+            using (MemoryStream pdfDest = new MemoryStream())
+            {
+                ConverterProperties properties = new ConverterProperties();
+                Uri baseUri = new Uri(PathHtml);
+                properties.SetBaseUri(baseUri.ToString());
+
+                HtmlConverter.ConvertToPdf(htmlStream, pdfDest, properties);
+
+                bytes = pdfDest.ToArray();
+            }
+
+            return bytes;
+        }
+
+
         /*
         public void createPdf(Uri url, String dest)
         {
@@ -75,5 +97,6 @@ namespace itext7.pdfhtmlClassLib
                 return response.Content.ReadAsStringAsync().Result;
             }
         }
+
     }
 }
