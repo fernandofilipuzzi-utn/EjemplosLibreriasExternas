@@ -50,10 +50,10 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // 
             // btnGenerarPDF
             // 
-            this.btnGenerarPDF.Location = new System.Drawing.Point(547, 6);
+            this.btnGenerarPDF.Location = new System.Drawing.Point(665, 6);
             this.btnGenerarPDF.Margin = new System.Windows.Forms.Padding(6);
             this.btnGenerarPDF.Name = "btnGenerarPDF";
-            this.btnGenerarPDF.Size = new System.Drawing.Size(228, 58);
+            this.btnGenerarPDF.Size = new System.Drawing.Size(156, 58);
             this.btnGenerarPDF.TabIndex = 27;
             this.btnGenerarPDF.Text = "Generar PDF";
             this.btnGenerarPDF.UseVisualStyleBackColor = true;
@@ -103,10 +103,10 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(569, 100);
+            this.button1.Location = new System.Drawing.Point(665, 99);
             this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 26);
+            this.button1.Size = new System.Drawing.Size(156, 26);
             this.button1.TabIndex = 34;
             this.button1.Text = "Seleccionar HTML";
             this.button1.UseVisualStyleBackColor = true;
@@ -154,15 +154,17 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 69);
+            this.textBox1.Location = new System.Drawing.Point(221, 53);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 26);
+            this.textBox1.Size = new System.Drawing.Size(353, 42);
             this.textBox1.TabIndex = 38;
+            this.textBox1.Text = "https://fernandofilipuzzi-utn.github.io/EjemplosLibreriasExternas/";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(169, 75);
+            this.label4.Location = new System.Drawing.Point(169, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 39;
@@ -171,7 +173,8 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // rbURL
             // 
             this.rbURL.AutoSize = true;
-            this.rbURL.Location = new System.Drawing.Point(495, 71);
+            this.rbURL.Checked = true;
+            this.rbURL.Location = new System.Drawing.Point(580, 70);
             this.rbURL.Name = "rbURL";
             this.rbURL.Size = new System.Drawing.Size(60, 24);
             this.rbURL.TabIndex = 40;
@@ -182,7 +185,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // rbLocal
             // 
             this.rbLocal.AutoSize = true;
-            this.rbLocal.Location = new System.Drawing.Point(495, 102);
+            this.rbLocal.Location = new System.Drawing.Point(580, 101);
             this.rbLocal.Name = "rbLocal";
             this.rbLocal.Size = new System.Drawing.Size(65, 24);
             this.rbLocal.TabIndex = 41;

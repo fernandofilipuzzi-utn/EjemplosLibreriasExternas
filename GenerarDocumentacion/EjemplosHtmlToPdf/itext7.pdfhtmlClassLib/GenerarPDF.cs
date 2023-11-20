@@ -16,7 +16,7 @@ namespace itext7.pdfhtmlClassLib
     {
         public void GenerarPDFFromHTML(string PathHtml, string PathPdf)
         {
-            if (PathHtml.StartsWith("http://") == true)
+            if (PathHtml.StartsWith("http://") == true || PathHtml.StartsWith("https://") == true)
             {
                 FromHTML(PathHtml, PathPdf);
             }
