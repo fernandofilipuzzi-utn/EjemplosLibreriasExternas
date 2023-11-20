@@ -56,7 +56,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 <summary>Vista prueba aplicación desktop de prueba</summary>
  
 <div align="center">
-        <img style="width:300px;" src="EjemplosToExcel/Ej1_NPOI_Desktop/docs/desktop.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/Ej1_NPOI_Desktop/docs/desktop.jpg"/>
 </div>
 </details>
 
@@ -65,7 +65,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 <summary>Vista prueba aplicación web de prueba</summary>
 
 <div align="center">
-        <img style="width:300px;" src="EjemplosToExcel/Ej2_NPOI_Web/docs/appweb.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/Ej2_NPOI_Web/docs/appweb.jpg"/>
 </div>
 
 ```csharp
