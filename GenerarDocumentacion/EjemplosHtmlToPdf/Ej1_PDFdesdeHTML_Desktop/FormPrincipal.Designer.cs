@@ -31,7 +31,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
         {
             this.btnGenerarPDF = new System.Windows.Forms.Button();
             this.lnklbficheroPDF = new System.Windows.Forms.LinkLabel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTipoLibreria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lnklbficheroHTML = new System.Windows.Forms.LinkLabel();
@@ -68,16 +68,17 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.lnklbficheroPDF.TabIndex = 28;
             this.lnklbficheroPDF.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklbficheroPDF_LinkClicked);
             // 
-            // comboBox2
+            // cbTipoLibreria
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "selectetPDF",
-            "itext7.pdfhtmlClassLib"});
-            this.comboBox2.Location = new System.Drawing.Point(221, 6);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(268, 28);
-            this.comboBox2.TabIndex = 30;
+            this.cbTipoLibreria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoLibreria.FormattingEnabled = true;
+            this.cbTipoLibreria.Items.AddRange(new object[] {
+            "itext7.pdfhtmlClassLib",
+            "selectetPDF"});
+            this.cbTipoLibreria.Location = new System.Drawing.Point(221, 6);
+            this.cbTipoLibreria.Name = "cbTipoLibreria";
+            this.cbTipoLibreria.Size = new System.Drawing.Size(268, 28);
+            this.cbTipoLibreria.TabIndex = 30;
             // 
             // label1
             // 
@@ -209,7 +210,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lnklbficheroHTML);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbTipoLibreria);
             this.Controls.Add(this.lnklbficheroPDF);
             this.Controls.Add(this.btnGenerarPDF);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -229,7 +230,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
 
         private System.Windows.Forms.Button btnGenerarPDF;
         private System.Windows.Forms.LinkLabel lnklbficheroPDF;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbTipoLibreria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.LinkLabel lnklbficheroHTML;

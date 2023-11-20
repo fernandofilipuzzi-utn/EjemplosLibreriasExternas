@@ -33,6 +33,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             PathPdf = Path.GetFullPath(@"salida\");
 
             openFileDialog1.InitialDirectory = Path.GetFullPath(PathFicheroLocalHtml);
+            cbTipoLibreria.SelectedIndex = 0;
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -53,13 +54,13 @@ namespace Ej1_PDFdesdeHTML_Desktop
                 }
             }
 
-            if (comboBox2.SelectedIndex != -1)
+            if (cbTipoLibreria.SelectedIndex != -1)
             {
                 try
                 {
                     PathPdf = Path.Combine(Path.GetDirectoryName(PathPdf), "salida.pdf");
 
-                    if (comboBox2.SelectedIndex == 0)
+                    if (cbTipoLibreria.SelectedIndex == 1)
                     {
                         selectPDFClassLib.GenerarPDF gen = new selectPDFClassLib.GenerarPDF();
                         gen.GenerarPDFFromHTML(PathHtmlOrigen, PathPdf);
