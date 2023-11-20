@@ -34,6 +34,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
 
             openFileDialog1.InitialDirectory = Path.GetFullPath(PathFicheroLocalHtml);
             cbTipoLibreria.SelectedIndex = 0;
+            gbSelecciónLocal.Enabled = false;
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -139,6 +140,11 @@ namespace Ej1_PDFdesdeHTML_Desktop
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            gbSelecciónLocal.Enabled = rbLocal.Checked;         
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
