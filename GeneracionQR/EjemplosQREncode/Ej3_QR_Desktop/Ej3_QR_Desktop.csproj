@@ -90,6 +90,11 @@
   <ItemGroup>
     <Content Include="docs\pantallazo.jpg" />
     <Content Include="img\logo.jpg" />
+    <None Include="Resources\copy_paste_70.png" />
+    <Content Include="Resources\icons\copy_paste.png" />
+    <Content Include="Resources\icons\copy_paste_70.png" />
+    <Content Include="Resources\icons\openfile_512.png" />
+    <Content Include="Resources\icons\openfile_70.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

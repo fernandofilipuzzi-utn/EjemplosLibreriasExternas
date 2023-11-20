@@ -29,13 +29,9 @@ namespace Ej3_QR_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQR = new System.Windows.Forms.Button();
             this.tbCadenaDeEntrada = new System.Windows.Forms.TextBox();
-            this.btnCopy = new System.Windows.Forms.Button();
             this.openFileDialogLogo = new System.Windows.Forms.OpenFileDialog();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnLoadLogo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
@@ -44,22 +40,18 @@ namespace Ej3_QR_Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.pbBackColor = new System.Windows.Forms.PictureBox();
             this.pbColor = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.btnLoadLogo = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
             // 
             // btnQR
             // 
@@ -74,53 +66,22 @@ namespace Ej3_QR_Desktop
             // 
             // tbCadenaDeEntrada
             // 
-            this.tbCadenaDeEntrada.Location = new System.Drawing.Point(12, 12);
+            this.tbCadenaDeEntrada.Location = new System.Drawing.Point(12, 23);
             this.tbCadenaDeEntrada.Multiline = true;
             this.tbCadenaDeEntrada.Name = "tbCadenaDeEntrada";
-            this.tbCadenaDeEntrada.Size = new System.Drawing.Size(545, 42);
+            this.tbCadenaDeEntrada.Size = new System.Drawing.Size(545, 31);
             this.tbCadenaDeEntrada.TabIndex = 29;
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.Location = new System.Drawing.Point(468, 159);
-            this.btnCopy.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(89, 75);
-            this.btnCopy.TabIndex = 30;
-            this.btnCopy.Text = "Copiar al porta papeles";
-            this.btnCopy.UseVisualStyleBackColor = true;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // openFileDialogLogo
             // 
             this.openFileDialogLogo.FileName = "openFileDialogLogo";
             // 
-            // pbLogo
-            // 
-            this.pbLogo.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pbLogo.Location = new System.Drawing.Point(6, 18);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(97, 102);
-            this.pbLogo.TabIndex = 31;
-            this.pbLogo.TabStop = false;
-            // 
-            // btnLoadLogo
-            // 
-            this.btnLoadLogo.Location = new System.Drawing.Point(119, 18);
-            this.btnLoadLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadLogo.Name = "btnLoadLogo";
-            this.btnLoadLogo.Size = new System.Drawing.Size(71, 42);
-            this.btnLoadLogo.TabIndex = 32;
-            this.btnLoadLogo.Text = "Cargar";
-            this.btnLoadLogo.UseVisualStyleBackColor = true;
-            this.btnLoadLogo.Click += new System.EventHandler(this.btnLoadLogo_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(119, 68);
+            this.button1.Location = new System.Drawing.Point(119, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 42);
+            this.button1.Size = new System.Drawing.Size(71, 54);
             this.button1.TabIndex = 33;
             this.button1.Text = "Quitar";
             this.button1.UseVisualStyleBackColor = true;
@@ -149,7 +110,7 @@ namespace Ej3_QR_Desktop
             this.groupBox2.Size = new System.Drawing.Size(199, 91);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Colores";
+            this.groupBox2.Text = "Selección de Colores";
             // 
             // label2
             // 
@@ -189,11 +150,61 @@ namespace Ej3_QR_Desktop
             this.pbColor.TabStop = false;
             this.pbColor.Click += new System.EventHandler(this.obDefinirColor_Click);
             // 
+            // pbLogo
+            // 
+            this.pbLogo.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pbLogo.Location = new System.Drawing.Point(6, 18);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(97, 102);
+            this.pbLogo.TabIndex = 31;
+            this.pbLogo.TabStop = false;
+            // 
+            // btnLoadLogo
+            // 
+            this.btnLoadLogo.Image = global::Ej3_QR_Desktop.Properties.Resources.openfile_70;
+            this.btnLoadLogo.Location = new System.Drawing.Point(119, 11);
+            this.btnLoadLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadLogo.Name = "btnLoadLogo";
+            this.btnLoadLogo.Size = new System.Drawing.Size(71, 56);
+            this.btnLoadLogo.TabIndex = 32;
+            this.btnLoadLogo.UseVisualStyleBackColor = true;
+            this.btnLoadLogo.Click += new System.EventHandler(this.btnLoadLogo_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Image = global::Ej3_QR_Desktop.Properties.Resources.copy_paste_70;
+            this.btnCopy.Location = new System.Drawing.Point(471, 206);
+            this.btnCopy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(89, 75);
+            this.btnCopy.TabIndex = 30;
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Contenido del QR";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 302);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCopy);
@@ -202,13 +213,13 @@ namespace Ej3_QR_Desktop
             this.Controls.Add(this.btnQR);
             this.Name = "FormPrincipal";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +242,7 @@ namespace Ej3_QR_Desktop
         private System.Windows.Forms.PictureBox pbColor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
