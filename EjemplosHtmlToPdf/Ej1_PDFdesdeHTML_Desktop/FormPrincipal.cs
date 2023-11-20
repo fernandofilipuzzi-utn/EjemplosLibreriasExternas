@@ -12,8 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
+using System.Web;
 
 namespace Ej1_PDFdesdeHTML_Desktop
 {
@@ -42,12 +41,9 @@ namespace Ej1_PDFdesdeHTML_Desktop
             vwPDF.Source = new Uri(Path.Combine(Application.StartupPath, "Resources", "nofile.html"));
 
             string javascriptCode = $"updateMensaje('{mensaje}');";
-            vwPDF.CoreWebView2InitializationCompleted += (sender, args) => {
-                if (vwPDF.CoreWebView2 != null)
-                {
-                    vwPDF.CoreWebView2.ExecuteScriptAsync(javascriptCode);
-                }
-            };
+
+            vwPDF.ExecuteScriptAsync(javascriptCode);
+
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -63,41 +59,35 @@ namespace Ej1_PDFdesdeHTML_Desktop
                 PathHtmlOrigen = PathFicheroLocalHtml;
                 if (File.Exists(PathFicheroLocalHtml) == false)
                 {
-                    MostrarMensaje($"No existe:{PathFicheroLocalHtml}");
+                    MostrarMensaje($"<p>No existe o no se ha seleccionado el fichero HTML:</p><p>{PathFicheroLocalHtml}</p>");
                     return;
                 }
             }
 
-            if (cbTipoLibreria.SelectedIndex != -1)
+            try
             {
-                try
+                PathPdf = Path.Combine(Path.GetDirectoryName(PathPdf), "salida.pdf");
+
+                if (cbTipoLibreria.SelectedIndex == 1)
                 {
-                    PathPdf = Path.Combine(Path.GetDirectoryName(PathPdf), "salida.pdf");
-
-                    if (cbTipoLibreria.SelectedIndex == 1)
-                    {
-                        selectPDFClassLib.GenerarPDF gen = new selectPDFClassLib.GenerarPDF();
-                        gen.GenerarPDFFromHTML(PathHtmlOrigen, PathPdf);
-                    }
-                    else
-                    {
-                        itext7.pdfhtmlClassLib.GenerarPDF gen = new itext7.pdfhtmlClassLib.GenerarPDF();
-                        gen.GenerarPDFFromHTML(PathHtmlOrigen, PathPdf);
-                    }
-
-                    lnklbficheroPDF.Text = Path.GetFileName(PathPdf);
-                    vwPDF.Source = new Uri(PathPdf);
-
+                    selectPDFClassLib.GenerarPDF gen = new selectPDFClassLib.GenerarPDF();
+                    gen.GenerarPDFFromHTML(PathHtmlOrigen, PathPdf);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MostrarMensaje($"{ ex.Message}|{ ex.StackTrace}");
+                    itext7.pdfhtmlClassLib.GenerarPDF gen = new itext7.pdfhtmlClassLib.GenerarPDF();
+                    gen.GenerarPDFFromHTML(PathHtmlOrigen, PathPdf);
                 }
+
+                lnklbficheroPDF.Text = Path.GetFileName(PathPdf);
+                vwPDF.Source = new Uri(PathPdf);
+
             }
-            else
+            catch (Exception ex)
             {
-                MostrarMensaje($"Seleccione una librería");
+                MostrarMensaje($"{ ex.Message}|{ ex.StackTrace}");
             }
+
         }
 
         private void lnklbficheroPDF_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -154,7 +144,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            gbSelecciónLocal.Enabled = rbLocal.Checked;         
+            gbSelecciónLocal.Enabled = rbLocal.Checked;
         }
 
         private void label4_Click(object sender, EventArgs e)
