@@ -9,7 +9,7 @@
 
 La aplicación de prueba se muestra en la siguiente figura, permite ir editando con otro editor como Visual Studio Code e ir regenerando el pdf para ver como va quedando.
 <div align="center">
-        <img style="width:100%;" src="GenerarDocumentacion/EjemplosHtmlToPdf/Ej1_PDFdesdeHTML_Desktop/docs/pantallazo.jpg"/>
+        <img style="width:100%;" src="EjemplosHtmlToPdf/Ej1_PDFdesdeHTML_Desktop/docs/pantallazo.jpg"/>
         <p>Figura 1. A la izquierda la aplicación de prueba, a la derecha Visual Studio Code</p>
 </div>
 
@@ -56,7 +56,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 <summary>Vista prueba aplicación desktop de prueba</summary>
  
 <div align="center">
-        <img style="width:300px;" src="GenerarDocumentacion/EjemplosToExcel/Ej1_NPOI_Desktop/docs/desktop.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/Ej1_NPOI_Desktop/docs/desktop.jpg"/>
 </div>
 </details>
 
@@ -65,7 +65,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 <summary>Vista prueba aplicación web de prueba</summary>
 
 <div align="center">
-        <img style="width:300px;" src="GenerarDocumentacion/EjemplosToExcel/Ej2_NPOI_Web/docs/appweb.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/Ej2_NPOI_Web/docs/appweb.jpg"/>
 </div>
 
 ```csharp
@@ -138,12 +138,12 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
         
 ###  Usando NPOI (XLS y XLSX)
 <div align="center">
-        <img style="width:300px;" src="GenerarDocumentacion/EjemplosToExcel/NPOI_excel_ClassLib/docs/excel_npoi.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/NPOI_excel_ClassLib/docs/excel_npoi.jpg"/>
 </div>
 
 ###  Usando EPPLUS (XLSX)
 <div align="center">
-        <img style="width:300px;" src="GenerarDocumentacion/EjemplosToExcel/EPPlus_excel_ClassLib/docs/excel_epplus.jpg"/>
+        <img style="width:300px;" src="EjemplosGenerarDocExcel/EPPlus_excel_ClassLib/docs/excel_epplus.jpg"/>
 </div>
 
 </details>
