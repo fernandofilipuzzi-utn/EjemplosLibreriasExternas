@@ -137,11 +137,17 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 # #        
         
 ###  Usando NPOI (XLS y XLSX)
+
+<a href="EjemplosGenerarDocExcel/NPOI_excel_ClassLib/GenerarExcelNPOI.cs">GenerarExcelNPOI.cs</a>
+
 <div align="center">
         <img style="width:300px;" src="EjemplosGenerarDocExcel/NPOI_excel_ClassLib/docs/excel_npoi.jpg"/>
 </div>
 
 ###  Usando EPPLUS (XLSX)
+
+<a href="EjemplosGenerarDocExcel/EPPlus_excel_ClassLib/GenerarExcelEPlus.cs">GenerarExcelEPlus.cs</a>
+
 <div align="center">
         <img style="width:300px;" src="EjemplosGenerarDocExcel/EPPlus_excel_ClassLib/docs/excel_epplus.jpg"/>
 </div>
