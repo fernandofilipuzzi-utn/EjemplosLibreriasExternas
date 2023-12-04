@@ -145,11 +145,11 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.vwPDF.TabIndex = 32;
             this.vwPDF.ZoomFactor = 1D;
             // 
-            // textBox1
+            // tbURLRemota
             // 
             this.tbURLRemota.Location = new System.Drawing.Point(73, 40);
             this.tbURLRemota.Multiline = true;
-            this.tbURLRemota.Name = "textBox1";
+            this.tbURLRemota.Name = "tbURLRemota";
             this.tbURLRemota.Size = new System.Drawing.Size(501, 55);
             this.tbURLRemota.TabIndex = 38;
             this.tbURLRemota.Text = "https://fernandofilipuzzi-utn.github.io/EjemplosLibreriasExternas/ej1_tarjetas/ta" +
@@ -205,6 +205,7 @@ namespace Ej1_PDFdesdeHTML_Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(836, 686);
             this.Controls.Add(this.rbLocal);
             this.Controls.Add(this.gbSelecciónLocal);
@@ -220,8 +221,10 @@ namespace Ej1_PDFdesdeHTML_Desktop
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "FormPrincipal";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Prueba de conversión html a pdf";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vwPDF)).EndInit();

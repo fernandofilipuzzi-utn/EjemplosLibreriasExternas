@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+  <style>
+   @page {
+    transform-origin: 0 0;
+    zoom:0.5;
+    transform: scale(0.5);
+    size: A4;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+  } 
+  </style>
+</head>
+
+<body style="transform-origin: 0 0;transform: scale(0.5, 1.1); zoom:0.5;  -webkit-transform: scale(20.5);-webkit-transform-origin: 0 0 ;-o-transform: scale(0.5);">
+
+  <div id="container">
+    <div class="page">
+      <div style="border:1px solid black; width: 260mm; height:275mm; margin-left:5mm; margin-right:5mm; margin-top:5mm; padding:5mm; ">
+        <table sytle="border:1px solid black;">
+          <tr>
+            <td>
+              <h2>New Account Application</h2>
+            </td>
+            <td>
+              <img src="../img/hc_logo.png" style="float: right;" />
+            </td>
+          </tr>
+        </table>
+        <br />
+        <table class="boldOdd borderBottom">
+          <tr>
+            <td>
+              Requested by:
+            </td>
+            <td>
+              {requesterName}
+            </td>
+            <td>
+              Date:
+            </td>
+            <td>
+              {requestDate}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Territory:
+            </td>
+            <td>
+              {territoryNumber}
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

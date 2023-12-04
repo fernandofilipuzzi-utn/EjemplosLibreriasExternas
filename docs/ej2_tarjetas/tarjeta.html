@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+  <style>
+    /*
+    @page {
+      size: A4 landscape;
+    }
+    */
+
+    @page {
+      margin: 0;
+      padding: 0;
+      size: 4.4in 3.2in;
+    }
+
+    @page :left {
+      margin-left: 0cm;
+      content: counter(page);
+    }
+
+    @page :right {
+      margin-left: 0cm;
+      content: counter(page);
+    }
+
+    @page :blank {
+      @top-center { content: "This page is intentionally left blank." }
+    }
+
+    .page {
+      zoom: 100%;
+      margin: 0;
+      padding: 0;
+      page-break-after: always;
+    }
+  </style>
+</head>
+
+<body sytle="width: 10cm; height: 70cm;">
+
+  <div class="page">
+
+    <div style="width:10cm; height:7cm; border: 1px solid rgb(83, 19, 185); margin-top: 5mm; margin-left: 5mm;">
+
+      <div style="float: left;width:4cm; height:4cm; border: 1px solid black; margin-top: 5mm; margin-left: 5mm;">
+        <img src="img/frank.png" style="width:4cm; height:4cm;" />
+      </div>
+
+      <div
+        style="float: left; margin-left: 4mm; margin-top: 1cm; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+        <p>NOMBRE: Frank Drevin</p>
+        <p>NÚMERO: 42.233.723</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page">
+
+    <div style="width:10cm; height:7cm; border: 1px solid black; margin-top: 5mm; margin-left: 5mm; ">
+
+      <div style="float: left;width:4cm; height:4cm; border: 1px solid black; margin-top: 5mm; margin-left: 5mm;">
+        <img src="img/julia.png" style="width:4cm; height:4cm;" />
+      </div>
+
+      <div
+        style="float: left; margin-left: 4mm; margin-top: 1cm; font-size: 12px; font-family: Arial, Helvetica, sans-serif;">
+        <p>NOMBRE: Julia Drevin</p>
+        <p>NÚMERO: 43.190.552</p>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
