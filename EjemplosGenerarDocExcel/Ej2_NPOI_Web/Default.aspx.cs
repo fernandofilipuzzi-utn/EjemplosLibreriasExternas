@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,7 +17,7 @@ namespace Ej2_NPOI_Web
 
         }
 
-        protected void btnXLS_Click(object sender, EventArgs e)
+        protected void btnExportarXLS_Click(object sender, EventArgs e)
         {
             try
             {
@@ -43,7 +44,7 @@ namespace Ej2_NPOI_Web
             }
         }
 
-        protected void btnXLSX_Click(object sender, EventArgs e)
+        protected void btnExportarXLSX_Click(object sender, EventArgs e)
         {
             try
             {
@@ -66,6 +67,27 @@ namespace Ej2_NPOI_Web
             catch (Exception ex)
             {
                 lbError.Text = ex.Message;
+            }
+        }
+
+        protected void btnImportarXLS_Click(object sender, EventArgs e)
+        {
+            if (fileUpload.HasFile)
+            {
+                try
+                {
+                    string filename = Path.GetFileName(fileUpload.FileName);
+                    fileUpload.SaveAs(Server.MapPath("~/") + filename);
+                    lbStatus.Text = "Upload status: File uploaded successfully!";
+                }
+                catch (Exception ex)
+                {
+                    lbStatus.Text = "Upload status: The file could not be uploaded. The following error occurred: " + ex.Message;
+                }
+            }
+            else
+            {
+                lbStatus.Text = "Upload status: Please select a file to upload.";
             }
         }
     }
