@@ -13,9 +13,10 @@
 <summary>Vista prueba aplicación desktop de prueba</summary>
 
 La aplicación de prueba se muestra en la siguiente figura, permite ir editando con otro editor como Visual Studio Code e ir regenerando el pdf para ver como va quedando.
+
 <div align="center">
-        <img style="width:50%;" src="EjemplosExportarImpotarDocExcel/pantallazo_servicio_api.png"/>
-        <p>Figura 1. Menú principal API Web</p>
+        <img style="width:100%;" src="EjemplosHtmlToPdf/Ej1_PDFdesdeHTML_Desktop/docs/pantallazo.jpg"/>
+        <p>Figura 1. A la izquierda la aplicación de prueba, a la derecha Visual Studio Code</p>
 </div>
 
 </details>
