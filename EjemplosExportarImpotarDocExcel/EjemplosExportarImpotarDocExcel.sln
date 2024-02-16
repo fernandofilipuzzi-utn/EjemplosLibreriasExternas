@@ -15,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ejemplo app web cliente que
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs soporte para clientes api", "libs soporte para clientes api", "{C0907374-2630-448D-BF9A-EEFA2D4C6871}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A2441FF6-626E-466A-B256-321F08DEC45F}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+		C:\Users\fernando\Desktop\pantallazo_servicio_api.png = C:\Users\fernando\Desktop\pantallazo_servicio_api.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
