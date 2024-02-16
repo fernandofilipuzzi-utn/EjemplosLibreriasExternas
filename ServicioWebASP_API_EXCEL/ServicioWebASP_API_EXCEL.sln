@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioExcelAPI", "ServicioExcelAPI\ServicioExcelAPI.csproj", "{A17CD6F1-1103-4CA7-B838-54443E488654}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjemploExportacionImportacionExcelCliente", "EjemploExportacionImportacionExcelCliente\EjemploExportacionImportacionExcelCliente.csproj", "{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api_servicio", "api_servicio", "{F5BEA9CB-1205-41D0-B820-92B9ECD5A1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicioAPI.Client.Services", "ServicioExcelAPI.Client.Services\ServicioAPI.Client.Services.csproj", "{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app_web_cliente_consume_api", "app_web_cliente_consume_api", "{75122850-920B-4CC5-86BE-6554F22560FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs soporte para clientes api", "libs soporte para clientes api", "{C0907374-2630-448D-BF9A-EEFA2D4C6871}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17CD6F1-1103-4CA7-B838-54443E488654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A17CD6F1-1103-4CA7-B838-54443E488654} = {F5BEA9CB-1205-41D0-B820-92B9ECD5A1CA}
+		{BCBD6302-F5D4-4BBB-9AA8-49BF70388B31} = {75122850-920B-4CC5-86BE-6554F22560FA}
+		{E59B0DB4-0405-469C-8AAA-C503B5B1BDDD} = {C0907374-2630-448D-BF9A-EEFA2D4C6871}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E74AFCEE-393C-4347-BF7A-ECABD0EA6820}
+	EndGlobalSection
+EndGlobal
