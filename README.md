@@ -1,5 +1,10 @@
 # Ejemplos aplicando librerías de terceros
 
+## Temas
+* [Generación de documentos PDF desde documetos HTML](# 'Generación de documentos PDF desde documetos HTML')
+* [Generación de documentos EXCEL](# 'Generación de documentos EXCEL')
+* [Exportación desde DataTable a fichero excel e Importación desde fichero Excel a DataTable](# 'Exportación desde DataTable a fichero excel e Importación desde fichero Excel a DataTable')
+* [Generación de QR](# 'Generación de QR')
 
 ### Generación de documentos PDF desde documetos HTML
 <details>
@@ -154,6 +159,14 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 
 </details>
 
+
+### Exportación desde DataTable a fichero excel e Importación desde fichero Excel a DataTable
+<details>
+<summary>servicio y ejemplos de prueba.</summary>
+
+* [Ver subcarpeta de la solución: EjemplosExportarImpotarDocExcel](EjemplosExportarImpotarDocExcel)
+
+</details>
 
 ### Generación de QR
 <details>
