@@ -1,7 +1,7 @@
 
-# Exportación desde DataTable a fichero excel e Importación desde fichero Excel a DataTable
+# ExportaciÃ³n desde DataTable a fichero excel e ImportaciÃ³n desde fichero Excel a DataTable
 
 <div align="center">
-        <img style="width:100%;" src="EjemplosHtmlToPdf/Ej1_PDFdesdeHTML_Desktop/docs/pantallazo.jpg"/>
-        <p>Figura 1. A la izquierda la aplicación de prueba, a la derecha Visual Studio Code</p>
+        <img style="width:100%;" src="EjemplosExportarImpotarDocExcel/pantallazo_servicio_api.png"/>
+        <p>Figura 1. MenÃº principal API Web</p>
 </div>
