@@ -234,6 +234,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
         <img style="width:300px;" src="https://github.com/fernandofilipuzzi-utn/EjemplosLibreriasExternas/blob/main/GeneracionQR/EjemplosQREncode/Ej3_QR_Desktop/docs/pantallazo.jpg"/>
  <p>Ejemplo 3.  Copia a portapeles, Colores e icono.</p>
 </div>
+
 </details>
 
 
