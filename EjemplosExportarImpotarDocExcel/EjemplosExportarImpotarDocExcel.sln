@@ -17,8 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs soporte para clientes 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A2441FF6-626E-466A-B256-321F08DEC45F}"
 	ProjectSection(SolutionItems) = preProject
+		pantallazo_servicio_api.png = pantallazo_servicio_api.png
 		Readme.md = Readme.md
-		C:\Users\fernando\Desktop\pantallazo_servicio_api.png = C:\Users\fernando\Desktop\pantallazo_servicio_api.png
 	EndProjectSection
 EndProject
 Global
