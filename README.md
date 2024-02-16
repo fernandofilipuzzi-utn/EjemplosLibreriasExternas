@@ -166,6 +166,11 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 
 * [Ver subcarpeta de la solución: EjemplosExportarImpotarDocExcel](EjemplosExportarImpotarDocExcel)
 
+<div align="center">
+        <img style="width:50%;" src="EjemplosExportarImpotarDocExcel/pantallazo_servicio_api.png"/>
+        <p>Figura 1. Menú principal API Web</p>
+</div>
+
 </details>
 
 ### Generación de QR
@@ -228,8 +233,6 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
         <img style="width:300px;" src="https://github.com/fernandofilipuzzi-utn/EjemplosLibreriasExternas/blob/main/GeneracionQR/EjemplosQREncode/Ej3_QR_Desktop/docs/pantallazo.jpg"/>
  <p>Ejemplo 3.  Copia a portapeles, Colores e icono.</p>
 </div>
-
-
 </details>
 
 
