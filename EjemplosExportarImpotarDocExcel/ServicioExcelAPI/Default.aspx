@@ -7,8 +7,7 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h3 class="display-4">Servicio para exportar e importar ficheros excel</h3>
-            <p class="lead">Documentación de la API y ejemplos de referencia</p>
+            <h3 class="display-4">Servicio para exportar e importar ficheros excel</h3>            
         </div>
 
         <div class="row text-center m-2">
@@ -19,6 +18,7 @@
 
                 <div style="background-color: #ced3fa">
                     <p class="h3">Documentación</p>
+                    <p class="lead">Documentación de la API</p>
                 </div>
 
                 <div class="row">
