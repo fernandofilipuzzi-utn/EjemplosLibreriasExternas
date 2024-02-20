@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ServicioAPI._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master"  MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ServicioAPI._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -8,13 +8,10 @@
 
         <div class="jumbotron">
             <h3 class="display-4">Servicio para exportar e importar ficheros excel</h3>
-            <p class="lead">.</p>
+            <p class="lead">Documentación de la API y ejemplos de referencia</p>
         </div>
 
         <div class="row text-center m-2">
-
-
-
 
             <div class="col">
 
@@ -46,7 +43,7 @@
                 <div class="border border-primary"></div>
 
                 <div style="background-color: #ced3fa">
-                    <p class="h3">Ejemplos usando API Web</p>
+                    <p class="h3">Ejemplos de Exportación/Importación por medio de una API Web</p>
                     <p>Ejemplos de como lamar a la API externa(aquí esta en el mismo servicio a modo de ejemplo)</p>
                 </div>
 
@@ -89,23 +86,42 @@
                 <div class="border border-primary"></div>
 
                 <div style="background-color: #ced3fa">
-                    <p class="h3">Ejemplo generación local</p>
+                    <p class="h3">Ejemplos de Exportación/Importación en el mismo proyecto</p>
+                    <p class="lead">Para Casos particulares donde el excel a construir o a importar es muy grande o no se 
+                        puede encuadrar en una tabla. Entonces aquí hay que ver que celda tomar el dato, etc.
+                    </p>
                 </div>
 
                 <div class="row">
-                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
-                        <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3" style="background-color:#dffecd">
+                        <img src="./img/excel-exportar.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
                         <div class="card-body">
                             <div class="card-title">
                                 <h2>Exportar a Excel</h2>
                             </div>
                             <div class="card-text" style="max-height: 60px; overflow: hidden;">
-                                <p>Generar un fichero excel(XLSX) por medio de un datatable</p>
+                                <p>Ejemplo sin usar API</p>
                             </div>
 
                         </div>
                         <div class="text-center">
-                            <asp:LinkButton class="btn btn-primary" ID="LinkButton1" OnClick="btnExcelDesdeUnDataTable_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                            <asp:LinkButton class="btn btn-primary" ID="btnExportacionCasoParticular" OnClick="btnExportacionCasoParticular_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                        </div>
+                    </div>
+
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3" style="background-color:#dffecd">
+                        <img src="./img/excel-importar.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2>Impotar un Excel</h2>
+                            </div>
+                            <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                                <p>Ejemplo sin usar API</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <asp:LinkButton class="btn btn-primary" ID="btnImportarCasoParticular" OnClick="btnImportarCasoParticular_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
                         </div>
                     </div>
                 </div>

@@ -102,16 +102,10 @@
                 <script>
                     function showMessage(mensaje, titulo)
                     {
-                        /*
-                        document.getElementById('lbTitulo').innerHTML = titulo;
-                        document.getElementById('lbMensaje').innerText = mensaje;
-                        console.log(mensaje)
-                        $('#messageBoxContain').modal('show');
-                        */
                         document.getElementById('lbTitulo').innerText = titulo;
                         var mensajeNode = document.createTextNode(mensaje);
                         var lbMensaje = document.getElementById('lbMensaje');
-                        lbMensaje.innerHTML = ''; // Limpiar cualquier contenido previo
+                        lbMensaje.innerHTML = ''; 
                         lbMensaje.appendChild(mensajeNode);
                         $('#messageBoxContain').modal('show');
                     }

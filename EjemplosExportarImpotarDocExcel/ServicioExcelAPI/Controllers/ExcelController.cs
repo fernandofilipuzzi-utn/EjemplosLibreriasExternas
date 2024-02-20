@@ -39,10 +39,10 @@ namespace ServicioAPI.Controllers
                 }
 
                 #region generacion excel
-                GenerarExcelNPOI generador = new GenerarExcelNPOI();
+                ProcesarExcel generador = new ProcesarExcel();
 
-                byte[] bytes = generador.GenerarExcel(dt, GenerarExcelNPOI.TipoFormato.XLSX);
-                string mimeType = generador.GetMimeType(GenerarExcelNPOI.TipoFormato.XLSX);
+                byte[] bytes = generador.ExportarDataTableToExcel(dt, ProcesarExcel.TipoFormato.XLSX);
+                string mimeType = generador.GetMimeType(ProcesarExcel.TipoFormato.XLSX);
 
                 result = new HttpResponseMessage(HttpStatusCode.OK) 
                 { 
@@ -77,7 +77,7 @@ namespace ServicioAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Excel/ImportarExcel")]
+        [Route("Excel/ImportarExcelToDataSet")]
         public IHttpActionResult PostImportarExcel()
         {
             DataSet ds=new DataSet();
@@ -103,8 +103,8 @@ namespace ServicioAPI.Controllers
                 }*/
 
                 #region generacion excel
-                GenerarExcelNPOI generador = new GenerarExcelNPOI();
-                ds=generador.ImportarExcel(archivoStream);
+                ProcesarExcel generador = new ProcesarExcel();
+                ds=generador.ImportarExcelToDataSet(archivoStream);
                 #endregion
             }
             catch (Exception ex)

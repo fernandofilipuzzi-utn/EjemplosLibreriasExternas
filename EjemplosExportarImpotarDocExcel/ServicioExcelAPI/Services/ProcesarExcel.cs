@@ -11,7 +11,7 @@ using System.Web;
 
 namespace ServicioAPI.Services
 {
-    public class GenerarExcelNPOI
+    public class ProcesarExcel
     {
         public enum TipoFormato { XLS, XLSX }
 
@@ -27,9 +27,8 @@ namespace ServicioAPI.Services
             }
         }
 
-        public byte[] GenerarExcel(DataTable tabla, TipoFormato formato = TipoFormato.XLSX)
+        public byte[] ExportarDataTableToExcel(DataTable dataTable, TipoFormato formato = TipoFormato.XLSX)
         {
-
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
 
             int nroLinea = 0;
@@ -73,12 +72,12 @@ namespace ServicioAPI.Services
             #endregion
 
 
-            foreach (DataColumn dr in tabla.Columns)
+            foreach (DataColumn dr in dataTable.Columns)
             {
 
             }
 
-            foreach (DataRow dr in tabla.Rows)
+            foreach (DataRow dr in dataTable.Rows)
             {
                 nroColumna = 0;
                 var row = sheet.CreateRow(++nroLinea);
@@ -109,7 +108,7 @@ namespace ServicioAPI.Services
             return bytes;
         }
 
-        public DataSet ImportarExcel(Stream stream, TipoFormato formato = TipoFormato.XLSX)
+        public DataSet ImportarExcelToDataSet(Stream stream, TipoFormato formato = TipoFormato.XLSX)
         {
             IWorkbook hssfwb = new XSSFWorkbook(stream);
             ISheet sheet = hssfwb.GetSheetAt(0);

@@ -209,6 +209,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="img\api-web.jpg" />
     <Content Include="img\cerrar-encuesta.jpg" />
+    <Content Include="img\excel-importar.jpg" />
+    <Content Include="img\excel-exportar.jpg" />
     <Content Include="img\excel2.jpg" />
     <Content Include="img\excel.jpg" />
     <Content Include="img\inicio-encuesta.jpg" />
@@ -268,7 +270,8 @@
     </Compile>
     <Compile Include="Models\Resultado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\GenerarExcelNPOI.cs" />
+    <Compile Include="Services\EjemploServicioParticular.cs" />
+    <Compile Include="Services\ProcesarExcel.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
