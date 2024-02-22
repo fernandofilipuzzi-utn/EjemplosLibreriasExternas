@@ -216,6 +216,7 @@
     <Content Include="img\inicio-encuesta.jpg" />
     <Content Include="img\registrar-encuesta.jpg" />
     <Content Include="ImportarExcel.aspx" />
+    <Content Include="ImportarExcelCasoParticular.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -268,10 +269,18 @@
     <Compile Include="ImportarExcel.aspx.designer.cs">
       <DependentUpon>ImportarExcel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ImportarExcelCasoParticular.aspx.cs">
+      <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportarExcelCasoParticular.aspx.designer.cs">
+      <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Resultado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\EjemploServicioParticular.cs" />
+    <Compile Include="Services\EjemploServicioCasoParticular.cs" />
     <Compile Include="Services\ProcesarExcel.cs" />
+    <Compile Include="Services\ImportacionExcelUtils.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +296,9 @@
     <Folder Include="webservice\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DescargaEjemplos\CasoParticular.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -121,7 +121,7 @@
 
                         </div>
                         <div class="text-center">
-                            <asp:LinkButton class="btn btn-primary" ID="btnImportarCasoParticular" OnClick="btnImportarCasoParticular_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                            <asp:HyperLink class="btn btn-primary" ID="btnImportarCasoParticular" NavigateUrl="~/ImportarExcelCasoParticular.aspx" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Importar</asp:HyperLink>
                         </div>
                     </div>
                 </div>

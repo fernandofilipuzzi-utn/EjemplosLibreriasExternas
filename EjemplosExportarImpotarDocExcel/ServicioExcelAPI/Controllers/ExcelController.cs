@@ -41,8 +41,8 @@ namespace ServicioAPI.Controllers
                 #region generacion excel
                 ProcesarExcel generador = new ProcesarExcel();
 
-                byte[] bytes = generador.ExportarDataTableToExcel(dt, ProcesarExcel.TipoFormato.XLSX);
-                string mimeType = generador.GetMimeType(ProcesarExcel.TipoFormato.XLSX);
+                byte[] bytes = generador.ExportarDataTableToExcel(dt, ImportacionExcelUtils.TipoFormato.XLSX);
+                string mimeType = ImportacionExcelUtils.GetMimeType(ImportacionExcelUtils.TipoFormato.XLSX);
 
                 result = new HttpResponseMessage(HttpStatusCode.OK) 
                 { 

@@ -11,52 +11,43 @@ namespace ServicioAPI
 {
 
 
-    public partial class _Default
+    public partial class ImportarExcelCasoParticular
     {
 
         /// <summary>
-        /// Control btnExcel.
+        /// Control btnDescargarEjemploExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnExcel;
+        protected global::System.Web.UI.WebControls.LinkButton btnDescargarEjemploExcel;
 
         /// <summary>
-        /// Control btnExcelDesdeUnDataTable.
+        /// Control fuFicheroExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcelDesdeUnDataTable;
+        protected global::System.Web.UI.WebControls.FileUpload fuFicheroExcel;
 
         /// <summary>
-        /// Control btnImportar.
+        /// Control btnEnviar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnImportar;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
 
         /// <summary>
-        /// Control btnExportacionCasoParticular.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExportacionCasoParticular;
-
-        /// <summary>
-        /// Control btnImportarCasoParticular.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnImportarCasoParticular;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }

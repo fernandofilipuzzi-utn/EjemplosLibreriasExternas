@@ -16,23 +16,13 @@ using System.Xml;
 
 namespace ServicioAPI.Services
 {
-    public class EjemploServicioParticular
+    /// <summary>
+    /// Caso especifico, donde el excel no se estructura en una simple tabla
+    /// </summary>
+    public class EjemploServicioCasoParticular
     {
       
-        public enum TipoFormato { XLS, XLSX }
-
-        public string GetMimeType(TipoFormato formato)
-        {
-            if (formato == TipoFormato.XLS)
-            {
-                return "application/vnd.ms-excel";
-            }
-            else
-            {
-                return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-            }
-        }
-        public byte[] ExportarAExcel(TipoFormato formato)
+        public byte[] ExportarAExcel(ImportacionExcelUtils.TipoFormato formato)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
 
@@ -43,7 +33,7 @@ namespace ServicioAPI.Services
 
             #region formato
             IWorkbook wb = null;
-            if (formato == TipoFormato.XLS)
+            if (formato == ImportacionExcelUtils.TipoFormato.XLS)
             {
                 wb = new HSSFWorkbook();
             }
@@ -352,6 +342,107 @@ namespace ServicioAPI.Services
             dt.Rows.Add(fila);
             */
             return dataSet;
+        }
+
+        public DataSet ImportarExcelResumenInsumos(Stream stream, ImportacionExcelUtils.TipoFormato formato = ImportacionExcelUtils.TipoFormato.XLSX)
+        {
+            #region tipo de documento
+            IWorkbook hssfwb = new XSSFWorkbook(stream);
+            ISheet sheet = hssfwb.GetSheetAt(0);
+            #endregion
+
+            //emulando tener las tablas
+            DataSet ds = getTablasParaCasoParticular();
+
+            #region sección  maestro
+            int numero = 0;
+            DateTime fecha = DateTime.MinValue;
+            double montoTotal = 0;
+
+            IRow headerRow = sheet.GetRow(1); //fila 2
+            if (headerRow != null)
+            {              
+                numero =(int) headerRow.GetCell((int)ImportacionExcelUtils.COL.B).NumericCellValue; //importante que la celda tenga formato número
+             
+                fecha = headerRow.GetCell((int)ImportacionExcelUtils.COL.G).DateCellValue; //importante que la celda tenga formato fecha
+            }
+
+            headerRow = sheet.GetRow(7); //fila 8
+            if (headerRow != null)
+            {
+                 montoTotal = headerRow.GetCell((int)ImportacionExcelUtils.COL.G).NumericCellValue; //importante que la celda tenga formato  numeric o $
+            }
+            #endregion
+
+            InsertResumen(ds, numero, fecha, montoTotal);
+
+            #region detalle
+            string descripcion = "";
+            double monto = 0;
+
+            headerRow = sheet.GetRow(4);//fila 5
+            if (headerRow != null)
+            {
+                descripcion = headerRow.GetCell((int)ImportacionExcelUtils.COL.A).StringCellValue; 
+                monto = headerRow.GetCell((int)ImportacionExcelUtils.COL.G).NumericCellValue;
+            }
+            InsertDetalleResumen(ds, numero, descripcion, monto);
+            #endregion
+
+            return ds;
+        }
+
+        /// <summary>
+        /// recreando tablas en memoria a modo de ejemplo
+        /// </summary>
+        /// <returns></returns>
+        public DataSet getTablasParaCasoParticular()
+        {
+            DataSet ds = new DataSet();
+
+            DataTable dtMaestro = new DataTable("Resumenes");
+            ds.Tables.Add(dtMaestro);
+
+            dtMaestro.Columns.Add("Numero", typeof(int));
+            dtMaestro.Columns.Add("Fecha", typeof(DateTime));
+            dtMaestro.Columns.Add("Monto_Total", typeof(double));
+
+            DataTable dtDetalle = new DataTable("Detalles_Resumen");
+            ds.Tables.Add(dtDetalle);
+
+            dtDetalle.Columns.Add("Numero_Reporte", typeof(int));
+            dtDetalle.Columns.Add("Descripcion", typeof(string));
+            dtDetalle.Columns.Add("Cantidad_UD", typeof(double));
+            dtDetalle.Columns.Add("Precio_UD", typeof(double));
+            dtDetalle.Columns.Add("Monto", typeof(double));
+
+            return ds;
+        }
+
+        public void InsertResumen(DataSet ds, int numero, DateTime fecha, double montoTotal)
+        {
+            //nueva fila
+            DataRow dataRow = ds.Tables["Resumenes"].NewRow();
+
+            //asigna
+            dataRow["Numero"] = numero;
+            dataRow["Fecha"] = fecha;
+            dataRow["Monto_Total"] = montoTotal;
+
+            ds.Tables["Resumenes"].Rows.Add(dataRow);
+        }
+
+        public void InsertDetalleResumen(DataSet ds, int numeroReporte, string Descripcion, double monto)
+        {
+            //nueva fila
+            DataRow dataRow = ds.Tables["Detalles_Resumen"].NewRow();
+
+            //asigna
+            dataRow["Numero_Reporte"] = numeroReporte;
+            dataRow["Descripcion"] = Descripcion;
+            dataRow["Monto"] = monto;
+
+            ds.Tables["Detalles_Resumen"].Rows.Add(dataRow);
         }
     }
 }

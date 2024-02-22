@@ -11,23 +11,11 @@ using System.Web;
 
 namespace ServicioAPI.Services
 {
+    
     public class ProcesarExcel
     {
-        public enum TipoFormato { XLS, XLSX }
-
-        public string GetMimeType(TipoFormato formato)
-        {
-            if (formato == TipoFormato.XLS)
-            {
-                return "application/vnd.ms-excel";
-            }
-            else
-            {
-                return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-            }
-        }
-
-        public byte[] ExportarDataTableToExcel(DataTable dataTable, TipoFormato formato = TipoFormato.XLSX)
+        
+        public byte[] ExportarDataTableToExcel(DataTable dataTable, ImportacionExcelUtils.TipoFormato formato = ImportacionExcelUtils.TipoFormato.XLSX)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
 
@@ -36,7 +24,7 @@ namespace ServicioAPI.Services
 
             #region formato
             IWorkbook wb = null;
-            if (formato == TipoFormato.XLS)
+            if (formato == ImportacionExcelUtils.TipoFormato.XLS)
             {
                 wb = new HSSFWorkbook();
             }
@@ -108,7 +96,7 @@ namespace ServicioAPI.Services
             return bytes;
         }
 
-        public DataSet ImportarExcelToDataSet(Stream stream, TipoFormato formato = TipoFormato.XLSX)
+        public DataSet ImportarExcelToDataSet(Stream stream, ImportacionExcelUtils.TipoFormato formato = ImportacionExcelUtils.TipoFormato.XLSX)
         {
             IWorkbook hssfwb = new XSSFWorkbook(stream);
             ISheet sheet = hssfwb.GetSheetAt(0);

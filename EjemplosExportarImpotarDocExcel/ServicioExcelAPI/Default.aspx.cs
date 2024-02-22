@@ -79,10 +79,10 @@ namespace ServicioAPI
             //puede enmarcar en un simple datatable
             try
             {
-                EjemploServicioParticular servicio = new EjemploServicioParticular();
+                EjemploServicioCasoParticular servicio = new EjemploServicioCasoParticular();
 
-                byte[] bytes = servicio.ExportarAExcel(EjemploServicioParticular.TipoFormato.XLS);
-                string mimeType = servicio.GetMimeType(EjemploServicioParticular.TipoFormato.XLS);
+                byte[] bytes = servicio.ExportarAExcel(ImportacionExcelUtils.TipoFormato.XLS);
+                string mimeType = ImportacionExcelUtils.GetMimeType(ImportacionExcelUtils.TipoFormato.XLS);
 
                 #region generando el response con el fichero
                 var fileName = "ejemplo.xls";
@@ -105,8 +105,5 @@ namespace ServicioAPI
             }
         }
 
-        protected void btnImportarCasoParticular_Click(object sender, EventArgs e)
-        {
-        }
     }
 }
