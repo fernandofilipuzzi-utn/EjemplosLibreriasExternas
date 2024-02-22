@@ -162,7 +162,7 @@ La aplicación de prueba se muestra en la siguiente figura, permite ir editando 
 
 
 ### Exportación desde DataTable a fichero excel e Importación desde fichero Excel a DataTable
-<details>
+<details open>
 <summary>servicio y ejemplos de prueba.</summary>
 
 * [Ver subcarpeta de la solución: EjemplosExportarImpotarDocExcel](EjemplosExportarImpotarDocExcel)
