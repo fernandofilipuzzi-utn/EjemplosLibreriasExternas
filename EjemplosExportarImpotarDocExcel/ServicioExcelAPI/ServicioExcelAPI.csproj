@@ -200,6 +200,8 @@
     <Content Include="Content\input-file.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="ExportarAExcelPorAPI_ReturnFile.aspx" />
+    <Content Include="ExportarAExcelPorAPI_ReturnFileFS.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,8 +217,9 @@
     <Content Include="img\excel.jpg" />
     <Content Include="img\inicio-encuesta.jpg" />
     <Content Include="img\registrar-encuesta.jpg" />
-    <Content Include="ImportarExcel.aspx" />
+    <Content Include="ImportarExcelPorAPI_InputFile.aspx" />
     <Content Include="ImportarExcelCasoParticular.aspx" />
+    <Content Include="ImportarExcelPorAPI_InputFileFS.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -251,7 +254,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\ExcelDTOController.cs" />
+    <Compile Include="Controllers\ExcelFileStreamController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -259,15 +263,29 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFileFS.aspx.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFileFS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFileFS.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFileFS.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ImportarExcel.aspx.cs">
-      <DependentUpon>ImportarExcel.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile.aspx.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImportarExcel.aspx.designer.cs">
-      <DependentUpon>ImportarExcel.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile.aspx.designer.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ImportarExcelCasoParticular.aspx.cs">
       <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
@@ -276,11 +294,17 @@
     <Compile Include="ImportarExcelCasoParticular.aspx.designer.cs">
       <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ImportarExcelPorAPI_InputFileFS.aspx.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFileFS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportarExcelPorAPI_InputFileFS.aspx.designer.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFileFS.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Resultado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EjemploServicioCasoParticular.cs" />
     <Compile Include="Services\ProcesarExcel.cs" />
-    <Compile Include="Services\ImportacionExcelUtils.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

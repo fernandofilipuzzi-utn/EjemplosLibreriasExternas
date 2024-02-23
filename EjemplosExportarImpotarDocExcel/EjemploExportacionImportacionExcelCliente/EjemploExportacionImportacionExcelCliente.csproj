@@ -123,6 +123,7 @@
     <Content Include="Content\input-file.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="ExportarAExcelPorAPI_ReturnFile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

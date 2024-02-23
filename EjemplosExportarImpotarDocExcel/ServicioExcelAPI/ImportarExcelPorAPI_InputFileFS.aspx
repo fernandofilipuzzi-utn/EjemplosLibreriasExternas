@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ImportarExcel.aspx.cs" Inherits="ServicioAPI.ImportarExcel" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ImportarExcelPorAPI_InputFileFS.aspx.cs" Inherits="ServicioAPI.ImportarExcelPorAPI_InputFileFS" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -31,9 +31,12 @@
                 <LayoutTemplate>
                     <table class="table table-condensed table-borderless table-hover text-center">
                         <thead class="table-dark">
-                            <th>A1</th>
-                            <th>B1</th>
-                            <th>C1</th>
+                            <th>Texto</th>
+                            <th>Entero</th>
+                            <th>Decimal</th>
+                            <th>Moneda</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
                         </thead>
                         <tbody>
                             <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
@@ -43,32 +46,12 @@
 
                 <ItemTemplate>
                     <tr>
-                        <td><%# Eval("A1") %></td>
-                        <td><%# Eval("B1") %></td>
-                        <td><%# Eval("C1") %></td>
-                    </tr>
-                </ItemTemplate>
-            </asp:ListView>
-        </div>
-
-        <div class="row m-0 p-0">
-
-            <asp:ListView ID="ListView2" runat="server">
-                <LayoutTemplate>
-                    <table class="table table-condensed table-borderless table-hover text-center">
-                        <thead class="table-dark">
-                            <th>A1</th>
-                            <th>B1</th>
-                        </thead>
-                        <tbody>
-                            <asp:PlaceHolder runat="server" ID="itemPlaceholder" />
-                        </tbody>
-                    </table>
-                </LayoutTemplate>
-
-                <ItemTemplate>
-                    <tr>
-                        <td><%# Eval("A1") %></td>
+                        <td><%# Eval("Texto") %></td>
+                        <td><%# Eval("Entero") %></td>
+                        <td><%# Eval("Decimal") %></td>
+                        <td><%# Eval("Moneda") %></td>
+                        <td><%# Eval("Fecha") %></td>
+                        <td><%# Eval("Hora") %></td>
                     </tr>
                 </ItemTemplate>
             </asp:ListView>

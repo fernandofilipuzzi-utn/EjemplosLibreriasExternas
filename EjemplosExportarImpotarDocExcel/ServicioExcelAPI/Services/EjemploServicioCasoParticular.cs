@@ -4,6 +4,7 @@ using NPOI.SS.Formula.Functions;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using NPOI.XWPF.UserModel;
+using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

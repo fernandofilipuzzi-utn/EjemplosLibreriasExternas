@@ -1,34 +1,27 @@
-﻿using NPOI.HSSF.UserModel;
-using NPOI.SS.Formula.Functions;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.Streaming;
-using NPOI.XSSF.UserModel;
+﻿using ServicioAPI.Client.Services.Services;
 using ServicioAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 
 namespace ServicioAPI.Controllers
 {
-    [RoutePrefix("api")]
-    public class ExcelController : ApiController
+    [RoutePrefix("api/ExcelFileStream")]
+    public class ExcelFileStreamController : ApiController
     {
         [HttpPost]
-        [Route("Excel/ExportarAExcel")]
-        public HttpResponseMessage PostExportarAExcel( [FromBody] DataTable dt)
+        [Route("ExportarAExcel")]
+        public HttpResponseMessage PostExportarAExcel([FromBody] DataTable dt)
         {
             HttpResponseMessage result = null;
             try
             {
-                if (dt==null)
+                if (dt == null)
                 {
                     var badRequestResponse = new HttpResponseMessage(HttpStatusCode.BadRequest)
                     {
@@ -44,13 +37,13 @@ namespace ServicioAPI.Controllers
                 byte[] bytes = generador.ExportarDataTableToExcel(dt, ImportacionExcelUtils.TipoFormato.XLSX);
                 string mimeType = ImportacionExcelUtils.GetMimeType(ImportacionExcelUtils.TipoFormato.XLSX);
 
-                result = new HttpResponseMessage(HttpStatusCode.OK) 
-                { 
-                    Content = new ByteArrayContent(bytes, 0, bytes.Length) 
+                result = new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new ByteArrayContent(bytes, 0, bytes.Length)
                 };
-                result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") 
-                { 
-                    FileName = $"cenat{DateTime.Now:yymmddHHMMss}.xls" 
+                result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                {
+                    FileName = $"cenat{DateTime.Now:yymmddHHMMss}.xls"
                 };
                 result.Content.Headers.ContentType = new MediaTypeHeaderValue(mimeType);
                 #endregion
@@ -60,15 +53,15 @@ namespace ServicioAPI.Controllers
                 string html = "";
                 html = $"<h4>{ex.Message}</h4>" +
                         $" <p>{ex.StackTrace}</p>";
-                
+
                 if (ex.InnerException != null)
                 {
                     html += $"<h4>{ex.InnerException.Message}</h4>" +
                              $"<p>{ex.InnerException.Message}</p>";
                 }
-                result = new HttpResponseMessage(HttpStatusCode.InternalServerError) 
-                { 
-                    Content = new StringContent(html) 
+                result = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                {
+                    Content = new StringContent(html)
                 };
                 result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment") { FileName = $"error.html" };
                 result.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
@@ -77,10 +70,10 @@ namespace ServicioAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Excel/ImportarExcelToDataSet")]
+        [Route("ImportarExcelToDataSet")]
         public IHttpActionResult PostImportarExcel()
         {
-            DataSet ds=new DataSet();
+            DataSet ds = new DataSet();
             ds.Tables.Add(new DataTable("Resultado"));
 
             if (!Request.Content.IsMimeMultipartContent())
@@ -104,7 +97,7 @@ namespace ServicioAPI.Controllers
 
                 #region generacion excel
                 ProcesarExcel generador = new ProcesarExcel();
-                ds=generador.ImportarExcelToDataSet(archivoStream);
+                ds = generador.ImportarExcelToDataSet(archivoStream);
                 #endregion
             }
             catch (Exception ex)

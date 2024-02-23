@@ -196,8 +196,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DTO_Respuesta.cs" />
+    <Compile Include="Models\ExportarAExcelRequest.cs" />
+    <Compile Include="Models\ImportarExcelRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ExcelClientService.cs" />
+    <Compile Include="Services\ExcelDTOClientService.cs" />
+    <Compile Include="Services\ExcelFileStreamClientService.cs" />
+    <Compile Include="Services\ImportacionExcelUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

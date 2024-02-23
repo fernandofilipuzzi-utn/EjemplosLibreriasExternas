@@ -1,4 +1,7 @@
-﻿using ServicioAPI.Client.Services.Services;
+﻿using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
+using ServicioAPI.Client.Services.Models;
+using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +14,7 @@ using System.Web.UI.WebControls;
 
 namespace ServicioAPI
 {
-    public partial class ImportarExcel : System.Web.UI.Page
+    public partial class ImportarExcelPorAPI_InputFile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,22 +26,26 @@ namespace ServicioAPI
             {
                 try
                 {
+                    #region sube el fichero 
                     string filename = Path.GetFileName(fuFicheroExcel.FileName);
                     string pathUpload = Path.Combine(Server.MapPath("/Uploads/") + filename);
                     fuFicheroExcel.SaveAs(pathUpload);
+                    #endregion
 
                     if (File.Exists(pathUpload))
                     {
-                        ExcelClientService oService = new ExcelClientService();
+                        ExcelDTOClientService oService = new ExcelDTOClientService();
 
-                        //libreria para manejar las peticiones a la api que resuelve esto
-                        DataSet dt = oService.ImportarExcel(pathUpload);
+                        #region delego en la libreria la llamada a la API pero se puede insertar esas subrutinas aquí
+                        DTO_Respuesta respuesta = oService.ImportarExcelAtravesAPI(pathUpload);
+                        //DataSet dt = respuesta.Datos as DataSet;
+                        DataSet dt = JsonConvert.DeserializeObject<DataSet>(respuesta.Datos as string);
+                        #endregion
 
+                        #region este listview solo se ajusta al ejemplo dado en la exportación a modo ilustrativo
                         ListView1.DataSource = dt.Tables[0];
                         ListView1.DataBind();
-
-                        // Response.SuppressContent = true;  // Prevents the HTTP headers from being sent to the client.
-                        // HttpContext.Current.ApplicationInstance.CompleteRequest();
+                        #endregion
                     }
                     else
                     {

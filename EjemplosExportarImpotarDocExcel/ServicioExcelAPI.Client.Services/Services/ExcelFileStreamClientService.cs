@@ -1,10 +1,9 @@
 ﻿using Microsoft.Web.Administration;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using ServicioAPI.Client.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -14,7 +13,7 @@ using System.Web;
 
 namespace ServicioAPI.Client.Services.Services
 {
-    public class ExcelClientService
+    public class ExcelFileStreamClientService
     {
         public static void AjustarLimiteRespuesta(string nombreSitio, long nuevoLimite)
         {
@@ -41,7 +40,7 @@ namespace ServicioAPI.Client.Services.Services
         //llamada al servicio exportardor a excel
         public void ExportarAExcel(DataTable dt, HttpResponse @out)
         {
-            string url = "http://localhost:7777/api/Excel/ExportarAExcel";
+            string url = "http://localhost:7777/api/ExcelFileStream/ExportarAExcel";
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -92,22 +91,15 @@ namespace ServicioAPI.Client.Services.Services
         //llamada al servicio importador
         public DataSet ImportarExcel(string pathUpload)
         {
-            DataSet dataSet=new DataSet();
+            #region inicialización de un dataset vacio
+            DTO_Respuesta respuesta = new DTO_Respuesta();
+            DataSet dataSet = new DataSet();
+            respuesta.Datos = dataSet;
             DataTable dt = new DataTable();
-            
             dataSet.Tables.Add(dt);
+            #endregion
 
-            dt.Columns.Add("A1", typeof(string));
-            dt.Columns.Add("B1", typeof(string));
-
-            /*
-            DataRow fila = dt.NewRow();
-            fila["A1"] = "32";
-            fila["B1"] = "32";
-            dt.Rows.Add(fila);
-            */
-            
-            string url = "http://localhost:7777/api/Excel/ImportarExcel";
+            string url = "http://localhost:7777/api/ExcelFileStream/ImportarExcelToDataSet";
             try
             {
                 using (HttpClient client = new HttpClient())
@@ -138,8 +130,8 @@ namespace ServicioAPI.Client.Services.Services
             {
                 throw ex;
             }
-    
-            return dataSet; 
+
+            return dataSet;
         }
     }
 }

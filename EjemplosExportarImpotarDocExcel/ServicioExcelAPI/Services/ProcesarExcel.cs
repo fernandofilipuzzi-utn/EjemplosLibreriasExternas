@@ -2,6 +2,7 @@ using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.Streaming;
 using NPOI.XSSF.UserModel;
+using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,11 +11,9 @@ using System.Linq;
 using System.Web;
 
 namespace ServicioAPI.Services
-{
-    
+{    
     public class ProcesarExcel
-    {
-        
+    {        
         public byte[] ExportarDataTableToExcel(DataTable dataTable, ImportacionExcelUtils.TipoFormato formato = ImportacionExcelUtils.TipoFormato.XLSX)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-ES");
@@ -59,16 +58,29 @@ namespace ServicioAPI.Services
             styleHText.SetFont(font);
             #endregion
 
-
+            #region procesando los nombres de las columnas
+            nroColumna = 0;
+            var row = sheet.CreateRow(0);
             foreach (DataColumn dr in dataTable.Columns)
             {
+                string texto = dr.ColumnName;
 
+                #region headers
+                row.CreateCell(nroColumna);
+                row.GetCell(nroColumna).SetCellType(CellType.String);
+                if (string.IsNullOrEmpty(texto) == false)
+                    row.GetCell(nroColumna).SetCellValue(texto);
+                row.GetCell(nroColumna).CellStyle = styleHText;
+                nroColumna++;
+                #endregion
             }
+            #endregion
 
+            #region procesando las filas de datos
             foreach (DataRow dr in dataTable.Rows)
             {
                 nroColumna = 0;
-                var row = sheet.CreateRow(++nroLinea);
+                row = sheet.CreateRow(++nroLinea);
 
                 foreach (object cell in dr.ItemArray)
                 {
@@ -84,15 +96,18 @@ namespace ServicioAPI.Services
                     #endregion
                 }
             }
+            #endregion
 
+            #region fichero
             byte[] bytes = new byte[0];
             using (var ms = new MemoryStream())
             {
                 wb.Write(ms);
                 bytes = ms.ToArray();
             }
-
             GC.Collect();
+            #endregion
+
             return bytes;
         }
 
@@ -108,12 +123,15 @@ namespace ServicioAPI.Services
             IRow headerRow = sheet.GetRow(0);
             if (headerRow != null)
             {
+                #region importando los nombres de las columnas
                 for (int i = 0; i < headerRow.LastCellNum; i++)
                 {
                     string columnName = headerRow.GetCell(i).StringCellValue;
                     dt.Columns.Add(columnName, typeof(string));
                 }
+                #endregion
 
+                #region importando las filas
                 for (int rowIdx = 1; rowIdx <= sheet.LastRowNum; rowIdx++)
                 {
                     IRow row = sheet.GetRow(rowIdx);
@@ -130,6 +148,7 @@ namespace ServicioAPI.Services
                         dt.Rows.Add(newRow);
                     }
                 }
+                #endregion
             }
             return ds;
         }
