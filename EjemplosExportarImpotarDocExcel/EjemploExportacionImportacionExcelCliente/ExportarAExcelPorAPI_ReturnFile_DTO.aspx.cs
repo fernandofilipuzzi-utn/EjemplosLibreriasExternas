@@ -1,4 +1,5 @@
-﻿using ServicioAPI.Client.Services.Models;
+﻿using EjemploExportacionImportacionExcelCliente;
+using ServicioAPI.Client.Services.Models;
 using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioAPI
+namespace ServicioEncuestasAPIClient
 {
-    public partial class ExportarAExcelPorAPI_ReturnFile : System.Web.UI.Page
+    public partial class ExportarAExcelPorAPI_ReturnFile_DTO : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Generar un fichero excel(XLSX) desde un datatable por medio de la API Genérica
         ///
@@ -47,7 +43,7 @@ namespace ServicioAPI
                 ((SiteMaster)this.Master).ShowMessage("Error", errores);
             }
         }
-             
+
         private DataSet EmulandoConsulta()
         {
             DataSet dataSet = new DataSet();

@@ -60,17 +60,17 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.2.3.2\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.Core, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NPOI.2.6.1\lib\netstandard2.0\NPOI.Core.dll</HintPath>
+    <Reference Include="NPOI.Core, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OOXML, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NPOI.2.6.1\lib\netstandard2.0\NPOI.OOXML.dll</HintPath>
+    <Reference Include="NPOI.OOXML, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OOXML.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OpenXml4Net, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NPOI.2.6.1\lib\netstandard2.0\NPOI.OpenXml4Net.dll</HintPath>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
-    <Reference Include="NPOI.OpenXmlFormats, Version=2.6.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <HintPath>..\packages\NPOI.2.6.1\lib\netstandard2.0\NPOI.OpenXmlFormats.dll</HintPath>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.6.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.6.2\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
       <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
@@ -200,8 +200,9 @@
     <Content Include="Content\input-file.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="ExportarAExcelPorAPI_ReturnFile.aspx" />
-    <Content Include="ExportarAExcelPorAPI_ReturnFileFS.aspx" />
+    <Content Include="ExportarAExcelCasoParticular.aspx" />
+    <Content Include="ExportarAExcelPorAPI_ReturnFile_DTO.aspx" />
+    <Content Include="ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -217,9 +218,9 @@
     <Content Include="img\excel.jpg" />
     <Content Include="img\inicio-encuesta.jpg" />
     <Content Include="img\registrar-encuesta.jpg" />
-    <Content Include="ImportarExcelPorAPI_InputFile.aspx" />
+    <Content Include="ImportarExcelPorAPI_InputFile_DTO.aspx" />
     <Content Include="ImportarExcelCasoParticular.aspx" />
-    <Content Include="ImportarExcelPorAPI_InputFileFS.aspx" />
+    <Content Include="ImportarExcelPorAPI_InputFile_NoDTO.aspx" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -263,29 +264,36 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.cs">
-      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
+    <Compile Include="ExportarAExcelCasoParticular.aspx.cs">
+      <DependentUpon>ExportarAExcelCasoParticular.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ExportarAExcelPorAPI_ReturnFile.aspx.designer.cs">
-      <DependentUpon>ExportarAExcelPorAPI_ReturnFile.aspx</DependentUpon>
+    <Compile Include="ExportarAExcelCasoParticular.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelCasoParticular.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ExportarAExcelPorAPI_ReturnFileFS.aspx.cs">
-      <DependentUpon>ExportarAExcelPorAPI_ReturnFileFS.aspx</DependentUpon>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile_DTO.aspx.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile_DTO.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ExportarAExcelPorAPI_ReturnFileFS.aspx.designer.cs">
-      <DependentUpon>ExportarAExcelPorAPI_ReturnFileFS.aspx</DependentUpon>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile_DTO.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile_DTO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx.designer.cs">
+      <DependentUpon>ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ImportarExcelPorAPI_InputFile.aspx.cs">
-      <DependentUpon>ImportarExcelPorAPI_InputFile.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile_DTO.aspx.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile_DTO.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImportarExcelPorAPI_InputFile.aspx.designer.cs">
-      <DependentUpon>ImportarExcelPorAPI_InputFile.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile_DTO.aspx.designer.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile_DTO.aspx</DependentUpon>
     </Compile>
     <Compile Include="ImportarExcelCasoParticular.aspx.cs">
       <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
@@ -294,12 +302,12 @@
     <Compile Include="ImportarExcelCasoParticular.aspx.designer.cs">
       <DependentUpon>ImportarExcelCasoParticular.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ImportarExcelPorAPI_InputFileFS.aspx.cs">
-      <DependentUpon>ImportarExcelPorAPI_InputFileFS.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile_NoDTO.aspx.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile_NoDTO.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImportarExcelPorAPI_InputFileFS.aspx.designer.cs">
-      <DependentUpon>ImportarExcelPorAPI_InputFileFS.aspx</DependentUpon>
+    <Compile Include="ImportarExcelPorAPI_InputFile_NoDTO.aspx.designer.cs">
+      <DependentUpon>ImportarExcelPorAPI_InputFile_NoDTO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Resultado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

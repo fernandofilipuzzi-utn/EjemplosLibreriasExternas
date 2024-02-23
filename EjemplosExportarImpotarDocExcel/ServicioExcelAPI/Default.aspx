@@ -5,7 +5,7 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h3 class="display-4">Servicio para exportar e importar ficheros excel</h3>
+            <h3 class="display-4">Servicio y ejemplos para exportar e importar ficheros Excel</h3>
         </div>
 
         <div class="row text-center m-2">
@@ -38,54 +38,18 @@
                     </div>
                 </div>
 
-                <div class="border border-primary"></div>
+               <div class="border border-primary mt-5"></div>
 
                 <div style="background-color: #ced3fa">
-                    <p class="h3">DTO. Ejemplos de Exportación/Importación por medio de una API Web</p>
-                    <p>Ejemplos de como lamar a la API externa(aquí esta en el mismo servicio a modo de ejemplo)</p>
-                    <p>Para el intercambio de entre cliente y servicio se utilizan DTO serializados</p>
-                </div>
-
-
-                <div class="row">
-                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
-                        <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h2>Exportar a Excel</h2>
-                            </div>
-                            <div class="card-text" style="max-height: 60px; overflow: hidden;">
-                                <p>Generar un fichero excel(XLSX) por medio de un datatable desde API genérica</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center">
-                            <asp:HyperLink class="btn btn-primary" ID="btnExcelDesdeUnDataTable" Target="_blank" NavigateUrl="~/ExportarAExcelPorAPI_ReturnFile.aspx" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:HyperLink>
-                        </div>
+                    <p class="h3">Usando DTO para el paso de datos (Archivo y DataTable).</p>
+                    <div class="text-left">
+                        <h4>Ejemplos:</h4>
+                        <ul>
+                            <li>Exportación/Importación por medio de API Web.</li>
+                            <li>Ejemplos de como lamar a la API externa(aquí esta en el mismo servicio a modo de ejemplo).</li>
+                            <li>Para el intercambio de entre cliente y servicio se utilizan DTO serializados en JSON.</li>
+                        </ul>
                     </div>
-
-                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
-                        <img src="./img/excel2.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h2>Importar Excel</h2>
-                            </div>
-                            <div class="card-text" style="max-height: 60px; overflow: hidden;">
-                                <p>Ejemplo usando API</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center">
-                            <asp:HyperLink class="btn btn-primary" ID="btnImportar" NavigateUrl="~/ImportarExcelPorAPI_InputFile.aspx" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Subir</asp:HyperLink>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div style="background-color: #ced3fa">
-                    <p class="h3">Sin DTO. Ejemplos de Exportación/Importación por medio de una API Web</p>
-                    <p>Ejemplos de como lamar a la API externa(aquí esta en el mismo servicio a modo de ejemplo)</p>
-                    <p>Se envia y recibe directamente el array de byte en el content y serializa el dataset directamente</p>
                 </div>
 
                 <div class="row">
@@ -101,7 +65,7 @@
 
                         </div>
                         <div class="text-center">
-                            <asp:HyperLink class="btn btn-primary" ID="HyperLink1" Target="_blank" NavigateUrl="~/ExportarAExcelPorAPI_ReturnFileFS.aspx" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:HyperLink>
+                            <asp:HyperLink class="btn btn-primary" ID="btnExcelDesdeUnDataTable" Target="_blank" NavigateUrl="~/ExportarAExcelPorAPI_ReturnFile_DTO.aspx" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:HyperLink>
                         </div>
                     </div>
 
@@ -117,13 +81,61 @@
 
                         </div>
                         <div class="text-center">
-                            <asp:HyperLink class="btn btn-primary" ID="HyperLink2" NavigateUrl="~/ImportarExcelPorAPI_InputFileFS.aspx" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Subir</asp:HyperLink>
+                            <asp:HyperLink class="btn btn-primary" ID="btnImportar" NavigateUrl="~/ImportarExcelPorAPI_InputFile_DTO.aspx" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Subir</asp:HyperLink>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="border border-primary"></div>
+                <div class="border border-primary mt-5"></div>
+
+                <div style="background-color: #ced3fa">
+                    <p class="h3">Sin Usar DTO para el paso de datos (Archivo y DataTable).</p>
+                    <div class="text-left">
+                        <h4>Ejemplos:</h4>
+                        <ul>
+                            <li>Exportación/Importación por medio de API Web.</li>
+                            <li>Ejemplos de como lamar a la API externa(aquí esta en el mismo servicio a modo de ejemplo).</li>
+                            <li>Se envía y recibe <span>directamente</span> el array de byte en el content y serializa el dataset directamente</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
+                        <img src="./img/excel.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2>Exportar a Excel</h2>
+                            </div>
+                            <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                                <p>Generar un fichero excel(XLSX) por medio de un datatable desde API genérica</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <asp:HyperLink class="btn btn-primary" ID="HyperLink1" Target="_blank" NavigateUrl="~/ExportarAExcelPorAPI_ReturnFile_NoDTO.aspx" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:HyperLink>
+                        </div>
+                    </div>
+
+                    <div class="card col-lg-4 col-md-5 col-sm-7 m-2 p-3">
+                        <img src="./img/excel2.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" />
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h2>Importar Excel</h2>
+                            </div>
+                            <div class="card-text" style="max-height: 60px; overflow: hidden;">
+                                <p>Ejemplo usando API</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <asp:HyperLink class="btn btn-primary" ID="HyperLink2" NavigateUrl="~/ImportarExcelPorAPI_InputFile_NoDTO.aspx" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Subir</asp:HyperLink>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="border border-primary mt-5"></div>
 
                 <div style="background-color: #ced3fa">
                     <p class="h3">Ejemplos de Exportación/Importación en el mismo proyecto</p>
@@ -146,7 +158,7 @@
 
                         </div>
                         <div class="text-center">
-                            <asp:LinkButton class="btn btn-primary" ID="btnExportacionCasoParticular" OnClick="btnExportacionCasoParticular_Click" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:LinkButton>
+                            <asp:HyperLink class="btn btn-primary" ID="btnExportacionCasoParticular" NavigateUrl="~/ExportarAExcelCasoParticular.aspx" runat="server"><i class="fa fa-download" aria-hidden="true"></i>Descargar</asp:HyperLink>
                         </div>
                     </div>
 

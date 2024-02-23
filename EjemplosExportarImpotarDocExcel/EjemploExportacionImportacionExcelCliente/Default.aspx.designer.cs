@@ -15,22 +15,22 @@ namespace EjemploExportacionImportacionExcelCliente
     {
 
         /// <summary>
-        /// Control btnExcel1.
+        /// Control btnExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcel1;
+        protected global::System.Web.UI.WebControls.HyperLink btnExcel;
 
         /// <summary>
-        /// Control btnExcel2.
+        /// Control btnExcelDesdeUnDataTable.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnExcel2;
+        protected global::System.Web.UI.WebControls.HyperLink btnExcelDesdeUnDataTable;
 
         /// <summary>
         /// Control btnImportar.
@@ -39,6 +39,42 @@ namespace EjemploExportacionImportacionExcelCliente
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnImportar;
+        protected global::System.Web.UI.WebControls.HyperLink btnImportar;
+
+        /// <summary>
+        /// Control HyperLink1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+
+        /// <summary>
+        /// Control HyperLink2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+
+        /// <summary>
+        /// Control btnExportacionCasoParticular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnExportacionCasoParticular;
+
+        /// <summary>
+        /// Control btnImportarCasoParticular.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnImportarCasoParticular;
     }
 }

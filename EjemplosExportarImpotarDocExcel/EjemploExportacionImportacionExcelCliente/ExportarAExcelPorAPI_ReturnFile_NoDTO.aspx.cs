@@ -1,4 +1,5 @@
-﻿using ServicioAPI.Client.Services.Services;
+﻿using EjemploExportacionImportacionExcelCliente;
+using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,9 +8,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioAPI
+namespace ServicioEncuestasAPIClient
 {
-    public partial class ExportarAExcelPorAPI_ReturnFileFS : System.Web.UI.Page
+    public partial class ExportarAExcelPorAPI_ReturnFile_NotDTO : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,7 +19,6 @@ namespace ServicioAPI
 
         protected void btnExportarFichero_Click(object sender, EventArgs e)
         {
-            string url = "http://localhost:7777/api/Excel/GetExcel";
             try
             {
                 DataTable dt = EmulandoConsulta().Tables[0];

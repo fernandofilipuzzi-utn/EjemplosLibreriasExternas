@@ -11,16 +11,16 @@ namespace ServicioAPI
 {
 
 
-    public partial class ExportarAExcelPorAPI_ReturnFile
+    public partial class ExportarAExcelCasoParticular
     {
 
         /// <summary>
-        /// Control btnDescargarEjemploExcel.
+        /// Control btnExportacionCasoParticular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnDescargarEjemploExcel;
+        protected global::System.Web.UI.WebControls.LinkButton btnExportacionCasoParticular;
     }
 }

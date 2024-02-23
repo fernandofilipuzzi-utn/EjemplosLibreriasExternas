@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExportarAExcelPorAPI_ReturnFile.aspx.cs" Inherits="ServicioAPI.ExportarAExcelPorAPI_ReturnFile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExportarAExcelPorAPI_ReturnFile_DTO.aspx.cs" Inherits="ServicioAPI.ExportarAExcelPorAPI_ReturnFile_DTO" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

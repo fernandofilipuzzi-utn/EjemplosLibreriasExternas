@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioAPI
+namespace ServicioEncuestasAPIClient
 {
 
 
-    public partial class ImportarExcelPorAPI_InputFileFS
+    public partial class ImportarExcelPorAPI_InputFile_NoDTO
     {
 
         /// <summary>

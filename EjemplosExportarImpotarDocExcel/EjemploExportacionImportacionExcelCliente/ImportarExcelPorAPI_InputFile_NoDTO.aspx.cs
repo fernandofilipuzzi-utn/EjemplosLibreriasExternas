@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using ServicioAPI.Client.Services.Models;
+﻿using EjemploExportacionImportacionExcelCliente;
 using ServicioAPI.Client.Services.Services;
 using System;
 using System.Collections.Generic;
@@ -10,9 +9,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ServicioAPI
+namespace ServicioEncuestasAPIClient
 {
-    public partial class ImportarExcelPorAPI_InputFileFS : System.Web.UI.Page
+    public partial class ImportarExcelPorAPI_InputFile_NoDTO : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

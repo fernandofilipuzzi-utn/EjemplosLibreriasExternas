@@ -7,20 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ServicioEncuestasAPIClient
+namespace ServicioAPI
 {
 
 
-    public partial class ExportarAExcelPorAPI_ReturnFile
+    public partial class ExportarAExcelPorAPI_ReturnFile_DTO
     {
 
         /// <summary>
-        /// Control btnExportarFichero.
+        /// Control btnDescargarEjemploExcel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExportarFichero;
+        protected global::System.Web.UI.WebControls.LinkButton btnDescargarEjemploExcel;
     }
 }

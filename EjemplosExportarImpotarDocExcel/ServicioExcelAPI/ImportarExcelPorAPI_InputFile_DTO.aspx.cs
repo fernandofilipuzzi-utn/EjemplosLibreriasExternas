@@ -14,7 +14,7 @@ using System.Web.UI.WebControls;
 
 namespace ServicioAPI
 {
-    public partial class ImportarExcelPorAPI_InputFile : System.Web.UI.Page
+    public partial class ImportarExcelPorAPI_InputFile_DTO : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

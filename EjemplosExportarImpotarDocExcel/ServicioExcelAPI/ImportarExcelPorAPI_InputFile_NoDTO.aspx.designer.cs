@@ -7,9 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EjemploExportacionImportacionExcelCliente
+namespace ServicioAPI
 {
-    public partial class ImportarExcel
+
+
+    public partial class ImportarExcelPorAPI_InputFile_NoDTO
     {
 
         /// <summary>

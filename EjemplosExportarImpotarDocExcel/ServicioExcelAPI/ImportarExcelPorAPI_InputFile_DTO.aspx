@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ImportarExcelPorAPI_InputFile.aspx.cs" Inherits="ServicioAPI.ImportarExcelPorAPI_InputFile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ImportarExcelPorAPI_InputFile_DTO.aspx.cs" Inherits="ServicioAPI.ImportarExcelPorAPI_InputFile_DTO" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

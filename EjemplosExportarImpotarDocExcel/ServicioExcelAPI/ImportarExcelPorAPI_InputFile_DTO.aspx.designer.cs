@@ -11,7 +11,7 @@ namespace ServicioAPI
 {
 
 
-    public partial class ImportarExcelPorAPI_InputFile
+    public partial class ImportarExcelPorAPI_InputFile_DTO
     {
 
         /// <summary>
