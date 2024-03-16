@@ -89,6 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="docs\pantallazo.jpg" />
+    <Content Include="img\logo_wifi2.png" />
+    <Content Include="img\logo_git.jpg" />
     <Content Include="img\logo_wifi.jpg" />
     <Content Include="img\logo_utn.jpg" />
     <None Include="Resources\copy_paste_70.png" />
