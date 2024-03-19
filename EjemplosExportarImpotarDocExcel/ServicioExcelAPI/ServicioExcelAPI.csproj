@@ -256,7 +256,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExcelDTOController.cs" />
-    <Compile Include="Controllers\ExcelFileStreamController.cs" />
+    <Compile Include="Controllers\ExcelNoDTOController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

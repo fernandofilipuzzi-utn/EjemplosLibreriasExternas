@@ -11,8 +11,13 @@ using System.Web.Http;
 
 namespace ServicioAPI.Controllers
 {
+
+    /// <summary>
+    /// Recibo/Envío el fichero como stream 
+    /// Serializo/Deserializo directamente el DataTable
+    /// </summary>
     [RoutePrefix("api/ExcelFileStream")]
-    public class ExcelFileStreamController : ApiController
+    public class ExcelNoDTOController : ApiController
     {
         [HttpPost]
         [Route("ExportarAExcel")]
@@ -88,7 +93,7 @@ namespace ServicioAPI.Controllers
 
                 /* si quiero guardarlo en el server
                 string appPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
-                var filePath = Path.Combine(appPath, "UploadsServer", "kk1.xlsx");
+                var filePath = Path.Combine(appPath, "UploadsServer", "Ejemplo.xlsx");
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {

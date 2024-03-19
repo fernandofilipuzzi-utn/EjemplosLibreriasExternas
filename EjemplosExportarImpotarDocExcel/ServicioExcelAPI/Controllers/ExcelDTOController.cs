@@ -24,6 +24,10 @@ using System.Web.Http;
 
 namespace ServicioAPI.Controllers
 {
+    /// <summary>
+    /// Recibo/Envío el fichero en base64 dentro de un json
+    /// Serializo/Deserializo directamente el DataTable dentro de json
+    /// </summary>
     [RoutePrefix("api/ExcelDTO")]
     public class ExcelDTOController : ApiController
     {
