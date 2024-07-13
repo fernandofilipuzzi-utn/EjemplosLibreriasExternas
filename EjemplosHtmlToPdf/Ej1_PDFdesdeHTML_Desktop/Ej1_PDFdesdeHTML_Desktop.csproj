@@ -207,6 +207,7 @@
     <Content Include="plantillas\ej1_tarjeta\img\frank.png" />
     <Content Include="plantillas\ej1_tarjeta\img\julia.png" />
     <Content Include="plantillas\ej1_tarjeta\tarjeta.html" />
+    <Content Include="plantillas\ej2_tabla\intdex.html" />
     <Content Include="Resources\nofile.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
